@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JPG to PDF Online Free — Convert Images to PDF | PDF Tools Hub</title>
+  <meta name="description" content="Convert JPG and PNG images to a single PDF online for free. No signup, no uploads. Drag to reorder images, choose page size, and download instantly — 100% browser-based with WebAssembly." />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="JPG to PDF Online Free — PDF Tools Hub" />
+  <meta property="og:description" content="Convert JPG and PNG images to a single PDF online for free. No signup, no uploads. Drag to reorder images, choose page size, and download instantly — 100% browser-based with WebAssembly." />
+  <meta property="og:url" content="https://pdftools-rouge.vercel.app/pdf-tools/jpg-to-pdf/" />
+  <meta property="og:site_name" content="PDF Tools Hub" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="JPG to PDF Online Free — PDF Tools Hub" />
+  <meta name="twitter:description" content="Convert JPG and PNG images to a single PDF online for free. No signup, no uploads. Drag to reorder images, choose page size, and download instantly — 100% browser-based with WebAssembly." />
+
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://pdftools-rouge.vercel.app/pdf-tools/jpg-to-pdf/" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"JPG to PDF Converter Online","url":"https://pdftools-rouge.vercel.app/pdf-tools/jpg-to-pdf/","applicationCategory":"UtilityApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Convert JPG and PNG images to PDF online for free. No signup, no uploads. 100% browser-based with WebAssembly."}
+  </script>
+  <!-- Open Graph -->
+
+  <!-- Twitter Card -->
+  <link rel="stylesheet" href="../../css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container container--wide">
+    <a href="../../index.html" class="logo">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="7" fill="#e63946" opacity="0.12"/><path d="M8 6h8l6 6v10a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z" fill="#e63946" opacity="0.2"/><path d="M16 6l6 6h-6V6z" fill="#e63946"/><rect x="9" y="13" width="10" height="1.5" rx="0.75" fill="#e63946"/><rect x="9" y="16" width="7" height="1.5" rx="0.75" fill="#e63946" opacity="0.6"/></svg>
+      PDF<span class="logo-accent">Tools</span>Hub
+    </a>
+    <nav aria-label="Main navigation"><ul class="nav-links">
+      <li><a href="../../index.html">All Tools</a></li>
+      <li><a href="../pdf-to-jpg/index.html">PDF to JPG</a></li>
+      <li><a href="../merge-pdf/index.html">Merge PDF</a></li>
+    </ul></nav>
+    <div class="header-actions"></div>
+  </div>
+</header>
+
+<main class="tool-page">
+  <div class="container container--wide">
+    <nav class="breadcrumb"><a href="../../index.html">Home</a><span>›</span><span>JPG to PDF</span></nav>
+
+    <div class="tool-header">
+      <div class="tool-tag">🖼️ Convert · Free</div>
+      <h1>JPG to PDF Online Free</h1>
+      <p>Convert multiple JPG or PNG images into a single PDF document. Drag to reorder, choose your page size, and download in seconds — no signup, no uploads.</p>
+    </div>
+
+    <!-- AD BANNER -->
+    <div class="ad-slot ad-slot--banner">Advertisement</div>
+
+    <div class="page-layout">
+      <div class="main-col">
+        <!-- UPLOAD ZONE -->
+        <div class="upload-card" id="upload-zone">
+          <input type="file" id="file-input" accept=".jpg,.jpeg,.png" multiple aria-label="Select image files" />
+          <div class="upload-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          </div>
+          <h2>Drop images here</h2>
+          <p>JPG or PNG · Multiple files supported</p>
+          <button class="btn-upload" onclick="document.getElementById('file-input').click();event.stopPropagation();">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            Select Images
+          </button>
+          <div class="upload-hint">JPG, JPEG, PNG · Multiple files · Processed locally</div>
+        </div>
+
+        <!-- FILE LIST (sortable) -->
+        <div id="file-list-container" class="hidden">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-3);">
+            <strong style="font-size:var(--text-sm);">Images to convert <span id="file-count">(0)</span></strong>
+            <button class="btn-secondary" id="add-more-btn">+ Add More</button>
+          </div>
+          <div id="sortable-list"></div>
+
+          <div class="options-panel" style="margin-top:var(--space-5);">
+            <h3>Page Options</h3>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4);">
+              <div>
+                <label class="options-label">Page size</label>
+                <select id="page-size" class="select-input">
+                  <option value="a4">A4 (210 × 297 mm)</option>
+                  <option value="letter">Letter (8.5 × 11 in)</option>
+                  <option value="original">Original image size</option>
+                </select>
+              </div>
+              <div>
+                <label class="options-label">Orientation</label>
+                <select id="orientation" class="select-input">
+                  <option value="portrait">Portrait</option>
+                  <option value="landscape">Landscape</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="tool-actions" style="margin-top:var(--space-5);">
+            <button class="btn-action" id="convert-btn" onclick="convertToPDF()">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Convert to PDF
+            </button>
+            <button class="btn-secondary" onclick="resetAll()">↺ Start over</button>
+          </div>
+        </div>
+
+        <div id="status-msg" class="status-message hidden"></div>
+        <div id="progress-wrap" class="progress-wrap hidden"><div class="progress-bar" id="progress-bar"></div></div>
+
+        <div id="result-card" class="result-card hidden">
+          <h3>✅ PDF Created Successfully!</h3>
+          <p id="result-info">Your PDF is ready to download.</p>
+          <button class="btn-download" id="download-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download PDF
+          </button>
+          <br><br>
+          <button class="btn-secondary" onclick="resetAll()" style="margin:0 auto;">Convert more images</button>
+        </div>
+
+        <!-- CONTENT -->
+        <div class="content-sections">
+          <div class="content-section">
+            <h2>How to Convert JPG to PDF</h2>
+            <div class="steps-list">
+              <div class="step-item"><div class="step-num">1</div><div class="step-content"><h3>Upload your images</h3><p>Click "Select Images" or drag and drop your JPG or PNG files. You can add as many images as you like.</p></div></div>
+              <div class="step-item"><div class="step-num">2</div><div class="step-content"><h3>Reorder if needed</h3><p>Drag and drop the images into your preferred order — this will determine the page order in the final PDF.</p></div></div>
+              <div class="step-item"><div class="step-num">3</div><div class="step-content"><h3>Choose page settings</h3><p>Select a page size (A4, Letter, or original image size) and orientation (portrait or landscape).</p></div></div>
+              <div class="step-item"><div class="step-num">4</div><div class="step-content"><h3>Download your PDF</h3><p>Click "Convert to PDF" and your browser will assemble the PDF instantly. Download it with one click.</p></div></div>
+            </div>
+          </div>
+
+          <div class="content-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <button class="faq-question">Can I convert PNG images as well?<svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+                <div class="faq-answer">Yes. This tool supports both JPG/JPEG and PNG image formats. You can even mix them in the same conversion — just add all your images and they'll all become pages in the output PDF.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">What does "Original image size" mean for page size?<svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+                <div class="faq-answer">When you choose "Original image size", each PDF page will be exactly the same dimensions as the source image in points (1 pixel = 0.75pt at 72 DPI). This is ideal for preserving the exact size and quality of photos or screenshots.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">Will the image quality be reduced in the PDF?<svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+                <div class="faq-answer">No additional compression is applied to your images. They are embedded directly into the PDF at full quality. JPEG images use the same compression they already had; PNG images are embedded losslessly.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="content-section">
+            <h2>Other PDF Tools</h2>
+            <div class="tools-grid">
+              <a href="../pdf-to-jpg/index.html" class="tool-card"><div class="tool-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/></svg></div><strong>PDF to JPG</strong><span>Convert to images</span></a>
+              <a href="../merge-pdf/index.html" class="tool-card"><div class="tool-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 6H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-3"/><polyline points="15 3 12 6 9 3"/></svg></div><strong>Merge PDF</strong><span>Combine into one</span></a>
+              <a href="../compress-pdf/index.html" class="tool-card"><div class="tool-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 14 10 14 10 20"/><line x1="10" y1="14" x2="21" y2="3"/></svg></div><strong>Compress PDF</strong><span>Reduce file size</span></a>
+              <a href="../split-pdf/index.html" class="tool-card"><div class="tool-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="21" y1="6" x2="3" y2="6"/><path d="M3 12h18"/></svg></div><strong>Split PDF</strong><span>Divide into pages</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <div class="ad-slot ad-slot--sidebar">Ad</div>
+        <div class="sidebar-widget">
+          <h3>Other PDF Tools</h3>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:var(--space-2);">
+            <li><a href="../pdf-to-jpg/index.html" style="font-size:var(--text-sm);color:var(--color-text-muted);text-decoration:none;" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--color-text-muted)'">🖼️ PDF to JPG</a></li>
+            <li><a href="../merge-pdf/index.html" style="font-size:var(--text-sm);color:var(--color-text-muted);text-decoration:none;" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--color-text-muted)'">📂 Merge PDF</a></li>
+            <li><a href="../compress-pdf/index.html" style="font-size:var(--text-sm);color:var(--color-text-muted);text-decoration:none;" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--color-text-muted)'">🗜️ Compress PDF</a></li>
+            <li><a href="../split-pdf/index.html" style="font-size:var(--text-sm);color:var(--color-text-muted);text-decoration:none;" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--color-text-muted)'">✂️ Split PDF</a></li>
+            <li><a href="../rotate-pdf/index.html" style="font-size:var(--text-sm);color:var(--color-text-muted);text-decoration:none;" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--color-text-muted)'">🔄 Rotate PDF</a></li>
+            <li><a href="../add-page-numbers/index.html" style="font-size:var(--text-sm);color:var(--color-text-muted);text-decoration:none;" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--color-text-muted)'">🔢 Add Page Numbers</a></li>
+          </ul>
+        </div>
+        <div class="ad-slot ad-slot--sidebar">Ad</div>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container container--wide">
+    <div class="footer-bottom">
+      <span>© 2026 PDF Tools Hub</span>
+      <span><a href="../../index.html" style="color:var(--color-primary);">All PDF Tools</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+<script src="../../js/faq.js"></script>
+<script src="../../js/upload.js"></script>
+<script>
+  // Extra styles
+  const style = document.createElement('style');
+  style.textContent = `
+    .options-label { display:block; font-size:var(--text-sm); font-weight:600; margin-bottom:var(--space-2); color:var(--color-text); }
+    .select-input { width:100%; padding:var(--space-3) var(--space-4); border:1.5px solid var(--color-border); border-radius:var(--radius-md); font-size:var(--text-sm); font-family:inherit; background:#fff; color:var(--color-text); cursor:pointer; outline:none; }
+    .select-input:focus { border-color:var(--color-primary); box-shadow:0 0 0 3px color-mix(in oklab, var(--color-primary) 12%, transparent); }
+    @media (max-width:480px) { .options-panel > div[style*="grid"] { grid-template-columns:1fr !important; } }
+  `;
+  document.head.appendChild(style);
+
+  let files = [];
+  let dragSrcIdx = null;
+
+  initUploadZone({
+    zoneId: 'upload-zone',
+    inputId: 'file-input',
+    accept: '.jpg,.jpeg,.png',
+    multiple: true,
+    onFiles: addFiles
+  });
+
+  document.getElementById('add-more-btn').addEventListener('click', () => {
+    const inp = document.createElement('input');
+    inp.type = 'file'; inp.accept = '.jpg,.jpeg,.png'; inp.multiple = true;
+    inp.onchange = () => { if (inp.files.length) addFiles([...inp.files]); };
+    inp.click();
+  });
+
+  function addFiles(newFiles) {
+    files = files.concat(newFiles);
+    renderFileList();
+    document.getElementById('upload-zone').classList.add('hidden');
+    document.getElementById('file-list-container').classList.remove('hidden');
+    document.getElementById('result-card').classList.add('hidden');
+  }
+
+  function renderFileList() {
+    const list = document.getElementById('sortable-list');
+    list.innerHTML = '';
+    document.getElementById('file-count').textContent = `(${files.length})`;
+    files.forEach((file, i) => {
+      const item = document.createElement('div');
+      item.className = 'sortable-file';
+      item.draggable = true;
+      item.dataset.idx = i;
+      const previewUrl = URL.createObjectURL(file);
+      item.innerHTML = `
+        <div class="drag-handle" title="Drag to reorder">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/>
+            <line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/>
+            <line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/>
+          </svg>
+        </div>
+        <img src="${previewUrl}" alt="Preview" style="width:40px;height:40px;object-fit:cover;border-radius:4px;border:1px solid var(--color-border);flex-shrink:0;" />
+        <div class="file-info">
+          <div class="file-name">${file.name}</div>
+          <div class="file-size">${formatBytes(file.size)}</div>
+        </div>
+        <span style="background:var(--color-primary-light);color:var(--color-primary);font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;">${i+1}</span>
+        <button class="file-item-remove" onclick="removeFile(${i})" title="Remove">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>`;
+
+      item.addEventListener('dragstart', () => { dragSrcIdx = i; item.classList.add('dragging'); });
+      item.addEventListener('dragend', () => item.classList.remove('dragging'));
+      item.addEventListener('dragover', e => e.preventDefault());
+      item.addEventListener('drop', e => {
+        e.preventDefault();
+        if (dragSrcIdx === null || dragSrcIdx === i) return;
+        const moved = files.splice(dragSrcIdx, 1)[0];
+        files.splice(i, 0, moved);
+        dragSrcIdx = null;
+        renderFileList();
+      });
+
+      list.appendChild(item);
+    });
+  }
+
+  function removeFile(idx) {
+    files.splice(idx, 1);
+    if (!files.length) resetAll();
+    else renderFileList();
+  }
+
+  // Page size constants in PDF points (1pt = 1/72 inch)
+  const PAGE_SIZES = {
+    a4: { w: 595.28, h: 841.89 },
+    letter: { w: 612, h: 792 }
+  };
+
+  async function convertToPDF() {
+    if (!files.length) return;
+    const btn = document.getElementById('convert-btn');
+    btn.disabled = true;
+    document.getElementById('progress-wrap').classList.remove('hidden');
+    showStatus('status-msg', '⏳ Converting images to PDF…', 'processing');
+
+    try {
+      const { PDFDocument } = PDFLib;
+      const pdf = await PDFDocument.create();
+      const pageSize = document.getElementById('page-size').value;
+      const orientation = document.getElementById('orientation').value;
+
+      for (let i = 0; i < files.length; i++) {
+        showProgress('progress-bar', Math.round(((i + 1) / files.length) * 90));
+        const file = files[i];
+        const bytes = await file.arrayBuffer();
+        const isJpeg = file.type === 'image/jpeg' || file.name.match(/\.jpe?g$/i);
+
+        let img;
+        if (isJpeg) {
+          img = await pdf.embedJpg(bytes);
+        } else {
+          img = await pdf.embedPng(bytes);
+        }
+
+        let pageW, pageH;
+        if (pageSize === 'original') {
+          pageW = img.width;
+          pageH = img.height;
+        } else {
+          const dims = PAGE_SIZES[pageSize];
+          pageW = orientation === 'landscape' ? dims.h : dims.w;
+          pageH = orientation === 'landscape' ? dims.w : dims.h;
+        }
+
+        const page = pdf.addPage([pageW, pageH]);
+
+        // Scale image to fit page while maintaining aspect ratio
+        const imgAspect = img.width / img.height;
+        const pageAspect = pageW / pageH;
+        let drawW, drawH, drawX, drawY;
+
+        if (pageSize === 'original') {
+          drawW = img.width; drawH = img.height; drawX = 0; drawY = 0;
+        } else {
+          const margin = pageSize === 'a4' ? 28 : 36; // ~10mm / 0.5in
+          const maxW = pageW - margin * 2;
+          const maxH = pageH - margin * 2;
+          if (imgAspect > pageW / pageH) {
+            drawW = maxW; drawH = maxW / imgAspect;
+          } else {
+            drawH = maxH; drawW = maxH * imgAspect;
+          }
+          drawX = (pageW - drawW) / 2;
+          drawY = (pageH - drawH) / 2;
+        }
+
+        page.drawImage(img, { x: drawX, y: drawY, width: drawW, height: drawH });
+      }
+
+      showProgress('progress-bar', 95);
+      const pdfBytes = await pdf.save();
+      showProgress('progress-bar', 100);
+
+      const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+      document.getElementById('result-info').textContent = `${files.length} image${files.length !== 1 ? 's' : ''} · ${files.length} page${files.length !== 1 ? 's' : ''} · ${formatBytes(blob.size)}`;
+      document.getElementById('download-btn').onclick = () => downloadBlob(blob, 'images.pdf');
+      document.getElementById('result-card').classList.remove('hidden');
+      document.getElementById('file-list-container').classList.add('hidden');
+      showStatus('status-msg', `✅ PDF created · ${files.length} pages · ${formatBytes(blob.size)}`, 'success');
+
+    } catch (e) {
+      showStatus('status-msg', '❌ Error: ' + e.message, 'error');
+      console.error(e);
+    }
+    btn.disabled = false;
+  }
+
+  function resetAll() {
+    files = [];
+    document.getElementById('upload-zone').classList.remove('hidden');
+    document.getElementById('file-list-container').classList.add('hidden');
+    document.getElementById('result-card').classList.add('hidden');
+    document.getElementById('status-msg').classList.add('hidden');
+    document.getElementById('progress-wrap').classList.add('hidden');
+    document.getElementById('sortable-list').innerHTML = '';
+  }
+</script>
+</body>
+</html>

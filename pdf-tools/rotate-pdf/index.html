@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rotate PDF Online Free — Fix PDF Page Orientation | PDF Tools Hub</title>
+  <meta name="description" content="Rotate PDF pages online for free — 90°, 180°, or 270°. Rotate all pages or specific ones. No signup, no uploads, 100% browser-based with WebAssembly." />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Rotate PDF Online Free — PDF Tools Hub" />
+  <meta property="og:description" content="Rotate PDF pages online for free — 90°, 180°, or 270°. Rotate all pages or specific ones. No signup, no uploads, 100% browser-based with WebAssembly." />
+  <meta property="og:url" content="https://pdftools-rouge.vercel.app/pdf-tools/rotate-pdf/" />
+  <meta property="og:site_name" content="PDF Tools Hub" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Rotate PDF Online Free — PDF Tools Hub" />
+  <meta name="twitter:description" content="Rotate PDF pages online for free — 90°, 180°, or 270°. Rotate all pages or specific ones. No signup, no uploads, 100% browser-based with WebAssembly." />
+
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://pdftools-rouge.vercel.app/pdf-tools/rotate-pdf/" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Rotate PDF Online","url":"https://pdftools-rouge.vercel.app/pdf-tools/rotate-pdf/","applicationCategory":"UtilityApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Rotate PDF pages online for free. No signup, no uploads. 100% browser-based with WebAssembly."}
+  </script>
+  <!-- Open Graph -->
+
+  <!-- Twitter Card -->
+  <link rel="stylesheet" href="../../css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container container--wide">
+    <a href="../../index.html" class="logo">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="7" fill="#e63946" opacity="0.12"/><path d="M8 6h8l6 6v10a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z" fill="#e63946" opacity="0.2"/><path d="M16 6l6 6h-6V6z" fill="#e63946"/><rect x="9" y="13" width="10" height="1.5" rx="0.75" fill="#e63946"/><rect x="9" y="16" width="7" height="1.5" rx="0.75" fill="#e63946" opacity="0.6"/></svg>
+      PDF<span class="logo-accent">Tools</span>Hub
+    </a>
+    <nav aria-label="Main navigation"><ul class="nav-links">
+      <li><a href="../../index.html">All Tools</a></li>
+      <li><a href="../merge-pdf/index.html">Merge PDF</a></li>
+      <li><a href="../split-pdf/index.html">Split PDF</a></li>
+    </ul></nav>
+    <div class="header-actions"></div>
+  </div>
+</header>
+
+<main class="tool-page">
+  <div class="container container--wide">
+    <nav class="breadcrumb"><a href="../../index.html">Home</a><span>›</span><span>Rotate PDF</span></nav>
+
+    <div class="tool-header">
+      <div class="tool-tag">🔄 Edit · Free</div>
+      <h1>Rotate PDF Online Free</h1>
+      <p>Fix sideways or upside-down PDF pages in seconds. Rotate all pages or target specific ones — 90°, 180°, or 270°. No uploads, fully private.</p>
+    </div>
+
+    <!-- AD BANNER -->
+    <div class="ad-slot ad-slot--banner">Advertisement</div>
+
+    <div class="page-layout">
+      <div class="main-col">
+        <!-- UPLOAD ZONE -->
+        <div class="upload-card" id="upload-zone">
+          <input type="file" id="file-input" accept=".pdf" aria-label="Select a PDF file" />
+          <div class="upload-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          </div>
+          <h2>Drop your PDF here</h2>
+          <p>or click to browse your files</p>
+          <button class="btn-upload" onclick="document.getElementById('file-input').click();event.stopPropagation();">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            Select PDF File
+          </button>
+          <div class="upload-hint">Single PDF only · Processed locally · No uploads</div>
+        </div>
+
+        <!-- TOOL PANEL -->
+        <div id="tool-panel" class="hidden">
+          <div class="file-panel">
+            <div class="file-panel-header">
+              <div class="file-info-display">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                <div>
+                  <div class="file-name" id="selected-filename">file.pdf</div>
+                  <div class="file-size" id="selected-info">0 pages</div>
+                </div>
+              </div>
+              <button class="btn-secondary btn-sm" onclick="resetAll()">✕ Change file</button>
+            </div>
+          </div>
+
+          <div class="options-panel">
+            <h3>Rotation Options</h3>
+            <div class="options-grid-2">
+              <div>
+                <label class="options-label">Pages to rotate</label>
+                <select id="page-select" class="select-input" onchange="toggleCustomPages()">
+                  <option value="all">All pages</option>
+                  <option value="odd">Odd pages only (1, 3, 5…)</option>
+                  <option value="even">Even pages only (2, 4, 6…)</option>
+                  <option value="custom">Custom pages</option>
+                </select>
+              </div>
+              <div>
+                <label class="options-label">Rotation angle</label>
+                <div class="rotation-buttons" id="rotation-buttons">
+                  <button class="rot-btn active" data-deg="90" onclick="selectRotation(this)" title="90° Clockwise">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 4v6h-6"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+                    90° CW
+                  </button>
+                  <button class="rot-btn" data-deg="180" onclick="selectRotation(this)" title="180°">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-4"/></svg>
+                    180°
+                  </button>
+                  <button class="rot-btn" data-deg="270" onclick="selectRotation(this)" title="90° Counter-Clockwise">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 4v6h6"/><path d="M3.51 15a9 9 0 1 0 .49-4"/></svg>
+                    90° CCW
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div id="custom-pages-panel" class="hidden" style="margin-top:var(--space-4);">
+              <label class="options-label">Custom page numbers <span style="color:var(--color-text-muted);font-weight:400;">(e.g. 1, 3, 5-8)</span></label>
+              <input type="text" id="custom-pages-input" class="text-input" placeholder="1, 3, 5-8" aria-label="Custom page numbers" />
+              <p style="font-size:var(--text-xs);color:var(--color-text-muted);margin-top:var(--space-2);">Enter individual page numbers and/or ranges separated by commas.</p>
+            </div>
+          </div>
+
+          <div class="tool-actions">
+            <button class="btn-action" id="rotate-btn" onclick="rotatePDF()">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 4v6h6"/><path d="M3.51 15a9 9 0 1 0 .49-4"/></svg>
+              Rotate PDF
+            </button>
+            <button class="btn-secondary" onclick="resetAll()">↺ Start over</button>
+          </div>
+
+          <div id="status-msg" class="status-message hidden"></div>
+          <div id="progress-wrap" class="progress-wrap hidden"><div class="progress-bar" id="progress-bar"></div></div>
+
+          <div id="result-card" class="result-card hidden">
+            <h3>✅ PDF Rotated Successfully!</h3>
+            <p id="result-info">Your rotated PDF is ready.</p>
+            <button class="btn-download" id="download-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download Rotated PDF
+            </button>
+            <br><br>
+            <button class="btn-secondary" onclick="resetAll()" style="margin:0 auto;">Rotate another PDF</button>
+          </div>
+        </div>
+
+        <!-- CONTENT -->
+        <div class="content-sections">
+          <div class="content-section">
+            <h2>How to Rotate PDF Pages</h2>
+            <div class="steps-list">
+              <div class="step-item"><div class="step-num">1</div><div class="step-content"><h3>Upload your PDF</h3><p>Click "Select PDF File" or drag your PDF into the upload area. The tool will detect the total number of pages automatically.</p></div></div>
+              <div class="step-item"><div class="step-num">2</div><div class="step-content"><h3>Select which pages to rotate</h3><p>Choose "All pages", "Odd pages", "Even pages", or enter specific page numbers and ranges (e.g. 1, 3, 5-8).</p></div></div>
+              <div class="step-item"><div class="step-num">3</div><div class="step-content"><h3>Choose rotation angle</h3><p>Select 90° clockwise, 180°, or 90° counter-clockwise depending on how the pages need to be corrected.</p></div></div>
+              <div class="step-item"><div class="step-num">4</div><div class="step-content"><h3>Download the result</h3><p>Click "Rotate PDF" and then download your corrected document instantly.</p></div></div>
+            </div>
+          </div>
+
+          <div class="content-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <button class="faq-question">Can I rotate only some pages and leave others unchanged?<svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+                <div class="faq-answer">Yes. Use the "Custom pages" option and enter the specific page numbers you want to rotate (e.g. <code>2, 4</code> or <code>5-9</code>). All other pages will remain at their original orientation.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">Does rotating a PDF affect the text and image quality?<svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+                <div class="faq-answer">Not at all. Rotation is applied as a PDF metadata operation — it changes the viewing angle stored in the file without re-rendering or re-encoding any content. Text, images, and fonts remain bit-for-bit identical.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">What's the difference between 90° CW and 90° CCW?<svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+                <div class="faq-answer">90° Clockwise (CW) rotates pages to the right. 90° Counter-Clockwise (CCW) rotates pages to the left. If a page is sideways, try 90° CW first. If it's still wrong, use 90° CCW or 180°.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="content-section">
+            <h2>Other PDF Tools</h2>
+            <div class="tools-grid">
+              <a href="../merge-pdf/index.html" class="tool-card"><div class="tool-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 6H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-3"/><polyline points="15 3 12 6 9 3"/></svg></div><strong>Merge PDF</strong><span>Combine into one</span></a>
+              <a href="../split-pdf/index.html" class="tool-card"><div class="tool-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="21" y1="6" x2="3" y2="6"/><path d="M3 12h18"/></svg></div><strong>Split PDF</strong><span>Divide into pages</span></a>
+              <a href="../compress-pdf/index.html" class="tool-card"><div class="tool-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 14 10 14 10 20"/><line x1="10" y1="14" x2="21" y2="3"/></svg></div><strong>Compress PDF</strong><span>Reduce file size</span></a>
+              <a href="../add-page-numbers/index.html" class="tool-card"><div class="tool-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg></div><strong>Page Numbers</strong><span>Add numbering</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <div class="ad-slot ad-slot--sidebar">Ad</div>
+        <div class="sidebar-widget">
+          <h3>Other PDF Tools</h3>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:var(--space-2);">
+            <li><a href="../merge-pdf/index.html" style="font-size:var(--text-sm);color:var(--color-text-muted);text-decoration:none;" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--color-text-muted)'">📂 Merge PDF</a></li>
+            <li><a href="../split-pdf/index.html" style="font-size:var(--text-sm);color:var(--color-text-muted);text-decoration:none;" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--color-text-muted)'">✂️ Split PDF</a></li>
+            <li><a href="../compress-pdf/index.html" style="font-size:var(--text-sm);color:var(--color-text-muted);text-decoration:none;" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--color-text-muted)'">🗜️ Compress PDF</a></li>
+            <li><a href="../pdf-to-jpg/index.html" style="font-size:var(--text-sm);color:var(--color-text-muted);text-decoration:none;" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--color-text-muted)'">🖼️ PDF to JPG</a></li>
+            <li><a href="../jpg-to-pdf/index.html" style="font-size:var(--text-sm);color:var(--color-text-muted);text-decoration:none;" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--color-text-muted)'">📄 JPG to PDF</a></li>
+            <li><a href="../add-page-numbers/index.html" style="font-size:var(--text-sm);color:var(--color-text-muted);text-decoration:none;" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--color-text-muted)'">🔢 Add Page Numbers</a></li>
+          </ul>
+        </div>
+        <div class="ad-slot ad-slot--sidebar">Ad</div>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container container--wide">
+    <div class="footer-bottom">
+      <span>© 2026 PDF Tools Hub</span>
+      <span><a href="../../index.html" style="color:var(--color-primary);">All PDF Tools</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+<script src="../../js/faq.js"></script>
+<script src="../../js/upload.js"></script>
+<script>
+  // Styles for new UI elements
+  const style = document.createElement('style');
+  style.textContent = `
+    .file-panel { background:var(--color-primary-light); border:1.5px solid var(--color-primary); border-radius:var(--radius-lg); padding:var(--space-4); margin-bottom:var(--space-5); }
+    .file-panel-header { display:flex; align-items:center; justify-content:space-between; gap:var(--space-3); flex-wrap:wrap; }
+    .file-info-display { display:flex; align-items:center; gap:var(--space-3); }
+    .options-label { display:block; font-size:var(--text-sm); font-weight:600; margin-bottom:var(--space-2); color:var(--color-text); }
+    .options-grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:var(--space-5); }
+    .select-input { width:100%; padding:var(--space-3) var(--space-4); border:1.5px solid var(--color-border); border-radius:var(--radius-md); font-size:var(--text-sm); font-family:inherit; background:#fff; color:var(--color-text); cursor:pointer; outline:none; }
+    .select-input:focus { border-color:var(--color-primary); }
+    .rotation-buttons { display:flex; gap:var(--space-2); flex-wrap:wrap; }
+    .rot-btn { display:flex; align-items:center; gap:var(--space-2); padding:var(--space-2) var(--space-3); border:1.5px solid var(--color-border); border-radius:var(--radius-md); background:#fff; font-size:var(--text-xs); font-weight:600; color:var(--color-text-muted); cursor:pointer; transition:all 0.18s; }
+    .rot-btn:hover { border-color:var(--color-primary); color:var(--color-primary); }
+    .rot-btn.active { border-color:var(--color-primary); background:var(--color-primary-light); color:var(--color-primary); }
+    .text-input { width:100%; padding:var(--space-3) var(--space-4); border:1.5px solid var(--color-border); border-radius:var(--radius-md); font-size:var(--text-base); font-family:inherit; background:#fff; color:var(--color-text); outline:none; transition:border-color 0.18s; }
+    .text-input:focus { border-color:var(--color-primary); box-shadow:0 0 0 3px color-mix(in oklab, var(--color-primary) 12%, transparent); }
+    .btn-sm { padding:var(--space-2) var(--space-3); font-size:var(--text-xs); }
+    code { background:var(--color-primary-light); color:var(--color-primary); padding:1px 5px; border-radius:3px; font-size:0.9em; }
+    @media (max-width:600px) { .options-grid-2 { grid-template-columns:1fr; } .rotation-buttons { gap:var(--space-2); } }
+  `;
+  document.head.appendChild(style);
+
+  let currentFile = null;
+  let pageCount = 0;
+  let selectedDeg = 90;
+
+  initUploadZone({
+    zoneId: 'upload-zone',
+    inputId: 'file-input',
+    accept: '.pdf',
+    multiple: false,
+    onFiles: handleFile
+  });
+
+  function handleFile(files) {
+    if (!files.length) return;
+    currentFile = files[0];
+    loadFileInfo(currentFile);
+  }
+
+  async function loadFileInfo(file) {
+    try {
+      const bytes = await file.arrayBuffer();
+      const { PDFDocument } = PDFLib;
+      const pdf = await PDFDocument.load(bytes);
+      pageCount = pdf.getPageCount();
+      document.getElementById('selected-filename').textContent = file.name;
+      document.getElementById('selected-info').textContent = `${pageCount} page${pageCount !== 1 ? 's' : ''} · ${formatBytes(file.size)}`;
+      document.getElementById('upload-zone').classList.add('hidden');
+      document.getElementById('tool-panel').classList.remove('hidden');
+      document.getElementById('result-card').classList.add('hidden');
+      document.getElementById('status-msg').classList.add('hidden');
+      document.getElementById('progress-wrap').classList.add('hidden');
+    } catch (e) {
+      showStatus('status-msg', '❌ Could not read this PDF. Please check the file.', 'error');
+    }
+  }
+
+  function selectRotation(btn) {
+    document.querySelectorAll('.rot-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    selectedDeg = parseInt(btn.dataset.deg);
+  }
+
+  function toggleCustomPages() {
+    const v = document.getElementById('page-select').value;
+    document.getElementById('custom-pages-panel').classList.toggle('hidden', v !== 'custom');
+  }
+
+  function parsePageList(input, max) {
+    const indices = new Set();
+    const parts = input.split(',').map(s => s.trim()).filter(Boolean);
+    for (const part of parts) {
+      if (part.includes('-')) {
+        const [a, b] = part.split('-').map(Number);
+        if (isNaN(a) || isNaN(b) || a < 1 || b > max || a > b) throw new Error(`Invalid range "${part}"`);
+        for (let i = a; i <= b; i++) indices.add(i - 1);
+      } else {
+        const n = Number(part);
+        if (isNaN(n) || n < 1 || n > max) throw new Error(`Invalid page "${part}"`);
+        indices.add(n - 1);
+      }
+    }
+    return [...indices];
+  }
+
+  async function rotatePDF() {
+    if (!currentFile) return;
+    const btn = document.getElementById('rotate-btn');
+    btn.disabled = true;
+    document.getElementById('progress-wrap').classList.remove('hidden');
+    showStatus('status-msg', '⏳ Rotating PDF pages…', 'processing');
+
+    try {
+      const { PDFDocument, degrees } = PDFLib;
+      const bytes = await currentFile.arrayBuffer();
+      const pdf = await PDFDocument.load(bytes);
+      const mode = document.getElementById('page-select').value;
+      const pages = pdf.getPages();
+
+      let targetIndices;
+      if (mode === 'all') {
+        targetIndices = pages.map((_, i) => i);
+      } else if (mode === 'odd') {
+        targetIndices = pages.map((_, i) => i).filter(i => i % 2 === 0); // 0-indexed: 0,2,4 = pages 1,3,5
+      } else if (mode === 'even') {
+        targetIndices = pages.map((_, i) => i).filter(i => i % 2 === 1);
+      } else {
+        const val = document.getElementById('custom-pages-input').value.trim();
+        if (!val) { showStatus('status-msg', '⚠️ Please enter page numbers.', 'error'); btn.disabled = false; return; }
+        targetIndices = parsePageList(val, pageCount);
+        if (!targetIndices.length) { showStatus('status-msg', '⚠️ No valid pages found in your input.', 'error'); btn.disabled = false; return; }
+      }
+
+      showProgress('progress-bar', 30);
+
+      for (const idx of targetIndices) {
+        const page = pages[idx];
+        const currentRotation = page.getRotation().angle;
+        page.setRotation(degrees((currentRotation + selectedDeg) % 360));
+      }
+
+      showProgress('progress-bar', 80);
+      const pdfBytes = await pdf.save();
+      showProgress('progress-bar', 100);
+
+      const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+      const baseName = currentFile.name.replace(/\.pdf$/i, '');
+      const angle = selectedDeg === 270 ? '90ccw' : `${selectedDeg}cw`;
+
+      document.getElementById('result-info').textContent = `${targetIndices.length} page${targetIndices.length !== 1 ? 's' : ''} rotated · ${formatBytes(blob.size)}`;
+      document.getElementById('download-btn').onclick = () => downloadBlob(blob, `${baseName}-rotated.pdf`);
+      document.getElementById('result-card').classList.remove('hidden');
+      showStatus('status-msg', `✅ Rotated ${targetIndices.length} page${targetIndices.length !== 1 ? 's' : ''} by ${selectedDeg}° · ${formatBytes(blob.size)}`, 'success');
+
+    } catch (e) {
+      showStatus('status-msg', '❌ Error: ' + e.message, 'error');
+      console.error(e);
+    }
+    btn.disabled = false;
+  }
+
+  function resetAll() {
+    currentFile = null;
+    pageCount = 0;
+    document.getElementById('upload-zone').classList.remove('hidden');
+    document.getElementById('tool-panel').classList.add('hidden');
+    document.getElementById('result-card').classList.add('hidden');
+    document.getElementById('status-msg').classList.add('hidden');
+    document.getElementById('progress-wrap').classList.add('hidden');
+    document.getElementById('page-select').value = 'all';
+    document.getElementById('custom-pages-panel').classList.add('hidden');
+    document.getElementById('custom-pages-input').value = '';
+    document.querySelectorAll('.rot-btn').forEach(b => b.classList.remove('active'));
+    document.querySelector('.rot-btn[data-deg="90"]').classList.add('active');
+    selectedDeg = 90;
+  }
+</script>
+</body>
+</html>

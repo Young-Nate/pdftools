@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PDF to JPG Online Free — Convert PDF Pages to Images | PDF Tools Hub</title>
+  <meta name="description" content="Convert PDF to JPG online for free. Each page becomes a high-quality JPG image. No signup, no uploads, 100% browser-based with WebAssembly. Download all images as a ZIP." />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="PDF to JPG Online Free — PDF Tools Hub" />
+  <meta property="og:description" content="Convert PDF to JPG online for free. Each page becomes a high-quality JPG image. No signup, no uploads, 100% browser-based with WebAssembly. Download all images as a ZIP." />
+  <meta property="og:url" content="https://pdftools-rouge.vercel.app/pdf-tools/pdf-to-jpg/" />
+  <meta property="og:site_name" content="PDF Tools Hub" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="PDF to JPG Online Free — PDF Tools Hub" />
+  <meta name="twitter:description" content="Convert PDF to JPG online for free. Each page becomes a high-quality JPG image. No signup, no uploads, 100% browser-based with WebAssembly. Download all images as a ZIP." />
+
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://pdftools-rouge.vercel.app/pdf-tools/pdf-to-jpg/" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"PDF to JPG Converter Online","url":"https://pdftools-rouge.vercel.app/pdf-tools/pdf-to-jpg/","applicationCategory":"UtilityApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Convert PDF pages to JPG images online for free. No signup, no uploads. 100% browser-based with WebAssembly."}
+  </script>
+  <!-- Open Graph -->
+
+  <!-- Twitter Card -->
+  <link rel="stylesheet" href="../../css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container container--wide">
+    <a href="../../index.html" class="logo">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="7" fill="#e63946" opacity="0.12"/><path d="M8 6h8l6 6v10a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z" fill="#e63946" opacity="0.2"/><path d="M16 6l6 6h-6V6z" fill="#e63946"/><rect x="9" y="13" width="10" height="1.5" rx="0.75" fill="#e63946"/></svg>
+      PDF<span class="logo-accent">Tools</span>Hub
+    </a>
+    <nav aria-label="Main navigation"><ul class="nav-links">
+      <li><a href="../../index.html">All Tools</a></li>
+      <li><a href="../jpg-to-pdf/index.html">JPG to PDF</a></li>
+      <li><a href="../merge-pdf/index.html">Merge PDF</a></li>
+    </ul></nav>
+    <div class="header-actions"></div>
+  </div>
+</header>
+
+<main class="tool-page">
+  <div class="container container--wide">
+    <nav class="breadcrumb"><a href="../../index.html">Home</a><span>›</span><span>PDF to JPG</span></nav>
+
+    <div class="tool-header">
+      <div class="tool-tag">🔄 Convert · Free</div>
+      <h1>PDF to JPG Online Free</h1>
+      <p>Convert every page of your PDF into a high-quality JPG image. Preview all pages, then download individual images or all at once.</p>
+    </div>
+
+    <div class="ad-slot ad-slot--banner">Advertisement</div>
+
+    <div class="page-layout">
+      <div class="main-col">
+        <div class="upload-card" id="upload-zone">
+          <input type="file" id="file-input" accept=".pdf" aria-label="Select PDF to convert" />
+          <div class="upload-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          </div>
+          <h2>Drop your PDF here</h2>
+          <p>Each page will be converted to a separate JPG image</p>
+          <button class="btn-upload" onclick="document.getElementById('file-input').click();event.stopPropagation();">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            Select PDF File
+          </button>
+          <div class="upload-hint">PDF only · All pages converted · Processed locally</div>
+        </div>
+
+        <div id="tool-panel" class="hidden">
+          <div id="file-list" class="file-list"></div>
+
+          <div class="options-panel">
+            <h3>Image Quality</h3>
+            <div class="radio-group">
+              <div class="radio-option" data-q="72" onclick="selectQuality(72,this)">72 DPI — Web</div>
+              <div class="radio-option selected" data-q="150" onclick="selectQuality(150,this)">150 DPI — Balanced ✓</div>
+              <div class="radio-option" data-q="300" onclick="selectQuality(300,this)">300 DPI — Print quality</div>
+            </div>
+          </div>
+
+          <div class="tool-actions">
+            <button class="btn-action" id="convert-btn" onclick="convertPDFtoJPG()">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              Convert to JPG
+            </button>
+            <button class="btn-secondary" onclick="resetAll()">↺ Start over</button>
+          </div>
+        </div>
+
+        <div id="status-msg" class="status-message hidden"></div>
+        <div id="progress-wrap" class="progress-wrap hidden"><div class="progress-bar" id="progress-bar"></div></div>
+
+        <!-- RESULTS -->
+        <div id="results-section" class="hidden">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-4);">
+            <strong id="pages-label" style="font-size:var(--text-sm);"></strong>
+            <button class="btn-action" id="download-all-btn" style="padding:var(--space-2) var(--space-5);font-size:var(--text-sm);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download All (ZIP)
+            </button>
+          </div>
+          <div class="preview-grid" id="preview-grid"></div>
+          <div class="text-center mt-4">
+            <button class="btn-secondary" onclick="resetAll()">Convert another PDF</button>
+          </div>
+        </div>
+
+        <div class="content-sections">
+          <div class="content-section">
+            <h2>How to Convert PDF to JPG</h2>
+            <div class="steps-list">
+              <div class="step-item"><div class="step-num">1</div><div class="step-content"><h3>Upload your PDF</h3><p>Select or drag and drop your PDF file. The document is loaded directly in your browser — nothing is sent to a server.</p></div></div>
+              <div class="step-item"><div class="step-num">2</div><div class="step-content"><h3>Choose image quality</h3><p>Pick 72 DPI for web/screen use, 150 DPI for a good balance, or 300 DPI for print-quality images.</p></div></div>
+              <div class="step-item"><div class="step-num">3</div><div class="step-content"><h3>Click "Convert to JPG"</h3><p>Each page is rendered as a separate image. You can preview all pages before downloading.</p></div></div>
+              <div class="step-item"><div class="step-num">4</div><div class="step-content"><h3>Download your images</h3><p>Download individual pages by clicking each thumbnail, or click "Download All (ZIP)" to get all images at once.</p></div></div>
+            </div>
+          </div>
+
+          <div class="content-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <button class="faq-question">What DPI should I choose?<svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+                <div class="faq-answer">72 DPI is sufficient for screen display, websites, and email. 150 DPI is a good all-purpose choice — it looks sharp on screen and prints reasonably well. 300 DPI is the standard for print-quality output and is best if you plan to print the images or use them in a design.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">How many pages can I convert?<svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+                <div class="faq-answer">There is no page limit. However, converting a large document at 300 DPI may take some time, since each page is rendered individually in your browser. For very long documents, 72 or 150 DPI will convert much faster.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">Can I convert a PDF to PNG instead of JPG?<svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+                <div class="faq-answer">This tool currently exports as JPG, which is the best choice for photos and general content. JPG files are smaller than PNG, making them easier to share and embed. If you need transparency support or lossless compression, PNG would be a better choice — we'll add that option soon.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="content-section">
+            <h2>Other PDF Tools</h2>
+            <div class="tools-grid">
+              <a href="../jpg-to-pdf/index.html" class="tool-card"><div class="tool-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg></div><strong>JPG to PDF</strong><span>Images to PDF</span></a>
+              <a href="../merge-pdf/index.html" class="tool-card"><div class="tool-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 6H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-3"/></svg></div><strong>Merge PDF</strong><span>Combine files</span></a>
+              <a href="../compress-pdf/index.html" class="tool-card"><div class="tool-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 14 10 14 10 20"/><line x1="10" y1="14" x2="21" y2="3"/></svg></div><strong>Compress PDF</strong><span>Reduce size</span></a>
+              <a href="../split-pdf/index.html" class="tool-card"><div class="tool-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="21" y1="6" x2="3" y2="6"/><path d="M3 12h18"/></svg></div><strong>Split PDF</strong><span>Extract pages</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="sidebar">
+        <div class="ad-slot ad-slot--sidebar">Ad</div>
+        <div class="sidebar-widget">
+          <h3>DPI Reference</h3>
+          <div style="font-size:var(--text-xs);color:var(--color-text-muted);line-height:2.2;">
+            <div style="display:flex;justify-content:space-between;"><span>72 DPI</span><strong style="color:var(--color-text)">Screen / Web</strong></div>
+            <div style="display:flex;justify-content:space-between;"><span>150 DPI</span><strong style="color:var(--color-text)">Balanced</strong></div>
+            <div style="display:flex;justify-content:space-between;"><span>300 DPI</span><strong style="color:var(--color-primary)">Print quality</strong></div>
+          </div>
+        </div>
+        <div class="ad-slot ad-slot--sidebar">Ad</div>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer"><div class="container container--wide"><div class="footer-bottom"><span>© 2026 PDF Tools Hub</span><span><a href="../../index.html" style="color:var(--color-primary);">All PDF Tools</a></span></div></div></footer>
+
+<!-- pdf.js CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.min.mjs" type="module" id="pdfjs-script"></script>
+<script src="../../js/faq.js"></script>
+<script src="../../js/upload.js"></script>
+<script>
+  let currentFile = null;
+  let dpi = 150;
+  let renderedBlobs = [];
+
+  function selectQuality(val, el) {
+    dpi = val;
+    document.querySelectorAll('.radio-option').forEach(o => o.classList.remove('selected'));
+    el.classList.add('selected');
+  }
+
+  initUploadZone({
+    zoneId: 'upload-zone',
+    inputId: 'file-input',
+    accept: '.pdf',
+    multiple: false,
+    onFiles: files => {
+      currentFile = files[0];
+      const list = document.getElementById('file-list');
+      list.innerHTML = '';
+      list.appendChild(renderFileItem(currentFile, 0, () => resetAll()));
+      document.getElementById('upload-zone').classList.add('hidden');
+      document.getElementById('tool-panel').classList.remove('hidden');
+      document.getElementById('results-section').classList.add('hidden');
+    }
+  });
+
+  function resetAll() {
+    currentFile = null;
+    renderedBlobs = [];
+    document.getElementById('upload-zone').classList.remove('hidden');
+    document.getElementById('tool-panel').classList.add('hidden');
+    document.getElementById('results-section').classList.add('hidden');
+    document.getElementById('status-msg').classList.add('hidden');
+    document.getElementById('progress-wrap').classList.add('hidden');
+    document.getElementById('preview-grid').innerHTML = '';
+  }
+
+  async function convertPDFtoJPG() {
+    if (!currentFile) return;
+    const btn = document.getElementById('convert-btn');
+    btn.disabled = true;
+    renderedBlobs = [];
+    document.getElementById('progress-wrap').classList.remove('hidden');
+    showStatus('status-msg', '⏳ Loading PDF…', 'processing');
+
+    try {
+      // Dynamically load pdf.js
+      const pdfjsLib = await import('https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.min.mjs');
+      pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.worker.min.mjs';
+
+      const arrayBuffer = await currentFile.arrayBuffer();
+      const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+      const numPages = pdf.numPages;
+
+      showStatus('status-msg', `⏳ Converting ${numPages} page${numPages > 1 ? 's' : ''}…`, 'processing');
+      const previewGrid = document.getElementById('preview-grid');
+      previewGrid.innerHTML = '';
+
+      const scale = dpi / 72;
+
+      for (let i = 1; i <= numPages; i++) {
+        showProgress('progress-bar', Math.round((i / numPages) * 95));
+        const page = await pdf.getPage(i);
+        const viewport = page.getViewport({ scale });
+
+        const canvas = document.createElement('canvas');
+        canvas.width = viewport.width;
+        canvas.height = viewport.height;
+        const ctx = canvas.getContext('2d');
+        await page.render({ canvasContext: ctx, viewport }).promise;
+
+        // Get blob
+        const blob = await new Promise(res => canvas.toBlob(res, 'image/jpeg', 0.92));
+        renderedBlobs.push({ blob, name: `page-${i}.jpg` });
+
+        // Thumbnail
+        const thumb = document.createElement('div');
+        thumb.className = 'preview-thumb';
+        thumb.style.cursor = 'pointer';
+        thumb.title = `Click to download page ${i}`;
+
+        const thumbCanvas = document.createElement('canvas');
+        const thumbScale = 120 / viewport.width;
+        thumbCanvas.width = 120;
+        thumbCanvas.height = Math.round(viewport.height * thumbScale);
+        const tCtx = thumbCanvas.getContext('2d');
+        tCtx.drawImage(canvas, 0, 0, thumbCanvas.width, thumbCanvas.height);
+
+        const numLabel = document.createElement('div');
+        numLabel.className = 'page-num';
+        numLabel.textContent = 'Page ' + i;
+
+        thumb.appendChild(thumbCanvas);
+        thumb.appendChild(numLabel);
+        thumb.onclick = () => downloadBlob(blob, `page-${i}.jpg`);
+        previewGrid.appendChild(thumb);
+      }
+
+      showProgress('progress-bar', 100);
+      showStatus('status-msg', `✅ ${numPages} page${numPages > 1 ? 's' : ''} converted to JPG`, 'success');
+      document.getElementById('pages-label').textContent = `${numPages} image${numPages > 1 ? 's' : ''} ready — click a thumbnail to download`;
+      document.getElementById('results-section').classList.remove('hidden');
+      document.getElementById('tool-panel').classList.add('hidden');
+
+      document.getElementById('download-all-btn').onclick = () => downloadAllAsZip();
+
+    } catch(e) {
+      showStatus('status-msg', '❌ Error: ' + e.message, 'error');
+      console.error(e);
+    }
+    btn.disabled = false;
+  }
+
+  async function downloadAllAsZip() {
+    // Simple ZIP using JSZip CDN
+    if (!window.JSZip) {
+      const s = document.createElement('script');
+      s.src = 'https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js';
+      document.head.appendChild(s);
+      await new Promise(res => s.onload = res);
+    }
+    const zip = new JSZip();
+    renderedBlobs.forEach(({ blob, name }) => zip.file(name, blob));
+    const content = await zip.generateAsync({ type: 'blob' });
+    downloadBlob(content, 'pdf-pages.zip');
+  }
+</script>
+</body>
+</html>

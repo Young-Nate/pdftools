@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PDF Tools Hub — Free Online PDF Tools: Merge, Split, Compress &amp; Convert</title>
+  <meta name="description" content="Merge, split, compress, rotate and convert PDFs free online. No signup, no uploads. 100% browser-based with WebAssembly." />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="PDF Tools Hub — Free Online PDF Tools: Merge, Split, Compress &amp; Convert" />
+  <meta property="og:description" content="Merge, split, compress, rotate and convert PDFs free online. No signup, no uploads. 100% browser-based with WebAssembly." />
+  <meta property="og:url" content="https://pdftools-rouge.vercel.app/" />
+  <meta property="og:site_name" content="PDF Tools Hub" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="PDF Tools Hub — Free Online PDF Tools: Merge, Split, Compress &amp; Convert" />
+  <meta name="twitter:description" content="Merge, split, compress, rotate and convert PDFs free online. No signup, no uploads. 100% browser-based with WebAssembly." />
+
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://pdftools-rouge.vercel.app/" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebSite","name":"PDF Tools Hub","url":"https://pdftools-rouge.vercel.app/","description":"Free online PDF tools — merge, split, compress, rotate and convert. No signup, no uploads. 100% browser-based with WebAssembly.","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://pdftools-rouge.vercel.app/?q={search_term_string}"},"query-input":"required name=search_term_string"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"PDF Tools Hub","url":"https://pdftools-rouge.vercel.app/","applicationCategory":"UtilityApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Merge, split, compress, rotate and convert PDFs free online. No signup, no uploads. 100% browser-based with WebAssembly.","featureList":"Merge PDF, Split PDF, Compress PDF, PDF to JPG, JPG to PDF, Rotate PDF, Add Page Numbers"}
+  </script>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="container container--wide">
+    <a href="index.html" class="logo">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+        <rect width="28" height="28" rx="7" fill="#e63946" opacity="0.12"/>
+        <path d="M8 6h8l6 6v10a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z" fill="#e63946" opacity="0.2"/>
+        <path d="M16 6l6 6h-6V6z" fill="#e63946"/>
+        <rect x="9" y="13" width="10" height="1.5" rx="0.75" fill="#e63946"/>
+        <rect x="9" y="16" width="7" height="1.5" rx="0.75" fill="#e63946" opacity="0.6"/>
+      </svg>
+      PDF<span class="logo-accent">Tools</span>Hub
+    </a>
+    <nav aria-label="Main navigation">
+      <ul class="nav-links">
+        <li><a href="#organize">Organize</a></li>
+        <li><a href="#convert">Convert</a></li>
+        <li><a href="#optimize">Optimize</a></li>
+        <li><a href="#edit">Edit</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a href="#all-tools" class="btn-primary">All Tools</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-badge">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+      100% Free · No Signup · Browser-Based
+    </div>
+    <h1>Every PDF Tool<br>You'll Ever Need — <em>Free</em></h1>
+    <p>Merge, split, compress, convert and edit PDFs directly in your browser. Fast, secure, and completely free.</p>
+
+    <div class="hero-search">
+      <input type="search" id="tool-search" placeholder="Search a tool — e.g. merge, compress…" aria-label="Search PDF tools" oninput="filterTools()" />
+      <button onclick="filterTools()">Search</button>
+    </div>
+
+    <div class="hero-stats">
+      <div class="hero-stat"><strong>7+</strong><span>Free PDF tools</span></div>
+      <div class="hero-stat"><strong>0</strong><span>Login required</span></div>
+      <div class="hero-stat"><strong>100%</strong><span>Browser-based</span></div>
+      <div class="hero-stat"><strong>Unlimited</strong><span>Files per day</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<div class="container">
+  <div class="trust-row">
+    <div class="trust-item">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      Files processed locally — never uploaded to a server
+    </div>
+    <div class="trust-item">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+      No file size limits
+    </div>
+    <div class="trust-item">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+      No watermarks
+    </div>
+    <div class="trust-item">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+      Works on all devices
+    </div>
+  </div>
+</div>
+
+<!-- AD BANNER -->
+<div class="container">
+  <div class="ad-slot ad-slot--banner">Advertisement</div>
+</div>
+
+<!-- ORGANIZE -->
+<section class="home-section" id="organize">
+  <div class="container">
+    <div class="section-title">📂 Organize PDF</div>
+    <div class="section-sub">Rearrange, combine, and split your PDF documents.</div>
+    <div class="home-tools-grid" id="grid-organize">
+      <a href="pdf-tools/merge-pdf/index.html" class="home-tool-card" data-name="merge pdf combine join">
+        <div class="card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 6H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-3"/><polyline points="15 3 12 6 9 3"/><line x1="12" y1="6" x2="12" y2="13"/></svg>
+        </div>
+        <strong>Merge PDF</strong>
+        <p>Combine multiple PDF files into one document in any order.</p>
+        <div class="card-arrow">Try it <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </a>
+      <a href="pdf-tools/split-pdf/index.html" class="home-tool-card" data-name="split pdf separate divide extract pages">
+        <div class="card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="21" y1="6" x2="3" y2="6"/><path d="M3 12h18"/><line x1="21" y1="18" x2="3" y2="18"/><line x1="9" y1="3" x2="3" y2="9"/><line x1="15" y1="3" x2="21" y2="9"/></svg>
+        </div>
+        <strong>Split PDF</strong>
+        <p>Extract pages or split a PDF into multiple separate files.</p>
+        <div class="card-arrow">Try it <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </a>
+      <a href="pdf-tools/rotate-pdf/index.html" class="home-tool-card" data-name="rotate pdf turn pages orientation">
+        <div class="card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 4v6h6"/><path d="M3.51 15a9 9 0 1 0 .49-4"/></svg>
+        </div>
+        <strong>Rotate PDF</strong>
+        <p>Rotate one or all pages in your PDF to the correct orientation.</p>
+        <div class="card-arrow">Try it <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </a>
+      <a href="pdf-tools/add-page-numbers/index.html" class="home-tool-card" data-name="add page numbers footer pdf numbering">
+        <div class="card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+        </div>
+        <strong>Add Page Numbers</strong>
+        <p>Stamp page numbers on your PDF — choose position and style.</p>
+        <div class="card-arrow">Try it <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- OPTIMIZE -->
+<section class="home-section" id="optimize">
+  <div class="container">
+    <div class="section-title">⚡ Optimize PDF</div>
+    <div class="section-sub">Reduce file size and improve performance.</div>
+    <div class="home-tools-grid" id="grid-optimize">
+      <a href="pdf-tools/compress-pdf/index.html" class="home-tool-card" data-name="compress pdf reduce size shrink smaller">
+        <div class="card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 14 10 14 10 20"/><polyline points="20 10 14 10 14 4"/><line x1="10" y1="14" x2="21" y2="3"/><line x1="3" y1="21" x2="14" y2="10"/></svg>
+        </div>
+        <strong>Compress PDF</strong>
+        <p>Reduce PDF file size without losing quality. Perfect for email.</p>
+        <div class="card-arrow">Try it <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CONVERT -->
+<section class="home-section" id="convert">
+  <div class="container">
+    <div class="section-title">🔄 Convert PDF</div>
+    <div class="section-sub">Transform PDFs to and from other formats.</div>
+    <div class="home-tools-grid" id="grid-convert">
+      <a href="pdf-tools/pdf-to-jpg/index.html" class="home-tool-card" data-name="pdf to jpg image convert export picture">
+        <div class="card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        </div>
+        <strong>PDF to JPG</strong>
+        <p>Convert each page of a PDF into a high-quality JPG image.</p>
+        <div class="card-arrow">Try it <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </a>
+      <a href="pdf-tools/jpg-to-pdf/index.html" class="home-tool-card" data-name="jpg to pdf image convert photos pictures">
+        <div class="card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+        </div>
+        <strong>JPG to PDF</strong>
+        <p>Turn one or multiple JPG images into a single PDF document.</p>
+        <div class="card-arrow">Try it <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ALL TOOLS (anchor for search) -->
+<section class="home-section" id="all-tools">
+  <div class="container">
+    <div class="section-title">All PDF Tools</div>
+    <div class="section-sub">Every tool, searchable.</div>
+
+    <div class="search-bar">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <input type="search" id="all-tool-search" placeholder="Search tools…" oninput="filterAllTools()" />
+    </div>
+
+    <div class="home-tools-grid" id="all-tools-grid">
+      <a href="pdf-tools/merge-pdf/index.html" class="home-tool-card" data-name="merge pdf combine join">
+        <div class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 6H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-3"/><polyline points="15 3 12 6 9 3"/><line x1="12" y1="6" x2="12" y2="13"/></svg></div>
+        <strong>Merge PDF</strong><p>Combine multiple PDFs into one file.</p>
+        <div class="card-arrow">Use tool <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </a>
+      <a href="pdf-tools/split-pdf/index.html" class="home-tool-card" data-name="split pdf separate divide extract pages">
+        <div class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="21" y1="6" x2="3" y2="6"/><path d="M3 12h18"/><line x1="21" y1="18" x2="3" y2="18"/></svg></div>
+        <strong>Split PDF</strong><p>Divide a PDF into separate pages or ranges.</p>
+        <div class="card-arrow">Use tool <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </a>
+      <a href="pdf-tools/compress-pdf/index.html" class="home-tool-card" data-name="compress pdf reduce size shrink">
+        <div class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 14 10 14 10 20"/><polyline points="20 10 14 10 14 4"/><line x1="10" y1="14" x2="21" y2="3"/></svg></div>
+        <strong>Compress PDF</strong><p>Reduce PDF file size for sharing and email.</p>
+        <div class="card-arrow">Use tool <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </a>
+      <a href="pdf-tools/pdf-to-jpg/index.html" class="home-tool-card" data-name="pdf to jpg image convert export">
+        <div class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+        <strong>PDF to JPG</strong><p>Convert PDF pages to high-quality images.</p>
+        <div class="card-arrow">Use tool <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </a>
+      <a href="pdf-tools/jpg-to-pdf/index.html" class="home-tool-card" data-name="jpg to pdf image convert photos pictures">
+        <div class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+        <strong>JPG to PDF</strong><p>Turn images into a PDF document instantly.</p>
+        <div class="card-arrow">Use tool <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </a>
+      <a href="pdf-tools/rotate-pdf/index.html" class="home-tool-card" data-name="rotate pdf orientation turn pages">
+        <div class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 4v6h6"/><path d="M3.51 15a9 9 0 1 0 .49-4"/></svg></div>
+        <strong>Rotate PDF</strong><p>Fix page orientation — rotate 90° or 180°.</p>
+        <div class="card-arrow">Use tool <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </a>
+      <a href="pdf-tools/add-page-numbers/index.html" class="home-tool-card" data-name="add page numbers footer numbering stamp">
+        <div class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="15" x2="15" y2="15"/></svg></div>
+        <strong>Add Page Numbers</strong><p>Stamp page numbers with custom position.</p>
+        <div class="card-arrow">Use tool <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </a>
+    </div>
+    <p class="hidden text-center mt-4" id="no-results-msg" style="color:var(--color-text-muted);font-size:var(--text-sm);">No tools found. Try a different search.</p>
+  </div>
+</section>
+
+<!-- WHY SECTION -->
+<section class="home-section" style="background:var(--color-surface-offset);">
+  <div class="container">
+    <div class="section-title text-center">Why PDF Tools Hub?</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:var(--space-6);margin-top:var(--space-6);">
+      <div style="text-align:center;">
+        <div style="font-size:2rem;margin-bottom:var(--space-3);">🔒</div>
+        <strong style="display:block;margin-bottom:var(--space-2);">100% Private</strong>
+        <p style="font-size:var(--text-sm);color:var(--color-text-muted);">Your files are processed locally in your browser. Nothing is uploaded to any server.</p>
+      </div>
+      <div style="text-align:center;">
+        <div style="font-size:2rem;margin-bottom:var(--space-3);">⚡</div>
+        <strong style="display:block;margin-bottom:var(--space-2);">Blazing Fast</strong>
+        <p style="font-size:var(--text-sm);color:var(--color-text-muted);">No server round-trips. Processing happens instantly in your browser using modern WebAssembly.</p>
+      </div>
+      <div style="text-align:center;">
+        <div style="font-size:2rem;margin-bottom:var(--space-3);">🆓</div>
+        <strong style="display:block;margin-bottom:var(--space-2);">Completely Free</strong>
+        <p style="font-size:var(--text-sm);color:var(--color-text-muted);">All tools are free to use with no watermarks, no file limits, and no account required.</p>
+      </div>
+      <div style="text-align:center;">
+        <div style="font-size:2rem;margin-bottom:var(--space-3);">📱</div>
+        <strong style="display:block;margin-bottom:var(--space-2);">Works Everywhere</strong>
+        <p style="font-size:var(--text-sm);color:var(--color-text-muted);">Fully responsive — works on desktop, tablet, and mobile. No app download needed.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container container--wide">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Organize</h4>
+        <ul>
+          <li><a href="pdf-tools/merge-pdf/index.html">Merge PDF</a></li>
+          <li><a href="pdf-tools/split-pdf/index.html">Split PDF</a></li>
+          <li><a href="pdf-tools/rotate-pdf/index.html">Rotate PDF</a></li>
+          <li><a href="pdf-tools/add-page-numbers/index.html">Add Page Numbers</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Convert</h4>
+        <ul>
+          <li><a href="pdf-tools/pdf-to-jpg/index.html">PDF to JPG</a></li>
+          <li><a href="pdf-tools/jpg-to-pdf/index.html">JPG to PDF</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Optimize</h4>
+        <ul>
+          <li><a href="pdf-tools/compress-pdf/index.html">Compress PDF</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 PDF Tools Hub — All processing done in your browser.</span>
+      <span>Free online PDF tools · No signup required</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/faq.js"></script>
+<script>
+  function filterTools() {
+    const q = document.getElementById('tool-search').value.toLowerCase();
+    document.querySelectorAll('.home-tool-card').forEach(card => {
+      const name = (card.getAttribute('data-name') || '') + card.textContent.toLowerCase();
+      card.style.display = (!q || name.includes(q)) ? '' : 'none';
+    });
+  }
+  function filterAllTools() {
+    const q = document.getElementById('all-tool-search').value.toLowerCase();
+    let visible = 0;
+    document.querySelectorAll('#all-tools-grid .home-tool-card').forEach(card => {
+      const name = (card.getAttribute('data-name') || '') + card.textContent.toLowerCase();
+      const show = !q || name.includes(q);
+      card.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+    document.getElementById('no-results-msg').classList.toggle('hidden', visible > 0);
+  }
+</script>
+</body>
+</html>

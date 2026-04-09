@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Merge PDF Online Free — Combine PDF Files | PDF Tools Hub</title>
+  <meta name="description" content="Merge multiple PDF files into one document online for free. No signup, no uploads. Drag and drop your PDFs, reorder them, and combine instantly — 100% browser-based with WebAssembly." />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Merge PDF Online Free — PDF Tools Hub" />
+  <meta property="og:description" content="Merge multiple PDF files into one document online for free. No signup, no uploads. Drag and drop your PDFs, reorder them, and combine instantly — 100% browser-based with WebAssembly." />
+  <meta property="og:url" content="https://pdftools-rouge.vercel.app/pdf-tools/merge-pdf/" />
+  <meta property="og:site_name" content="PDF Tools Hub" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Merge PDF Online Free — PDF Tools Hub" />
+  <meta name="twitter:description" content="Merge multiple PDF files into one document online for free. No signup, no uploads. Drag and drop your PDFs, reorder them, and combine instantly — 100% browser-based with WebAssembly." />
+
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://pdftools-rouge.vercel.app/pdf-tools/merge-pdf/" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Merge PDF Online","url":"https://pdftools-rouge.vercel.app/pdf-tools/merge-pdf/","applicationCategory":"UtilityApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Merge multiple PDF files into one document online for free. No signup, no uploads. 100% browser-based with WebAssembly."}
+  </script>
+  <!-- Open Graph -->
+
+  <!-- Twitter Card -->
+  <link rel="stylesheet" href="../../css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container container--wide">
+    <a href="../../index.html" class="logo">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="7" fill="#e63946" opacity="0.12"/><path d="M8 6h8l6 6v10a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z" fill="#e63946" opacity="0.2"/><path d="M16 6l6 6h-6V6z" fill="#e63946"/><rect x="9" y="13" width="10" height="1.5" rx="0.75" fill="#e63946"/><rect x="9" y="16" width="7" height="1.5" rx="0.75" fill="#e63946" opacity="0.6"/></svg>
+      PDF<span class="logo-accent">Tools</span>Hub
+    </a>
+    <nav aria-label="Main navigation"><ul class="nav-links">
+      <li><a href="../../index.html">All Tools</a></li>
+      <li><a href="../split-pdf/index.html">Split PDF</a></li>
+      <li><a href="../compress-pdf/index.html">Compress PDF</a></li>
+    </ul></nav>
+    <div class="header-actions"></div>
+  </div>
+</header>
+
+<main class="tool-page">
+  <div class="container container--wide">
+    <nav class="breadcrumb"><a href="../../index.html">Home</a><span>›</span><span>Merge PDF</span></nav>
+
+    <div class="tool-header">
+      <div class="tool-tag">📂 Organize · Free</div>
+      <h1>Merge PDF Online Free</h1>
+      <p>Combine multiple PDF files into a single document. Drag to reorder, then click Merge — done in seconds, no signup required.</p>
+    </div>
+
+    <!-- AD BANNER -->
+    <div class="ad-slot ad-slot--banner">Advertisement</div>
+
+    <div class="page-layout">
+      <div class="main-col">
+        <!-- UPLOAD ZONE -->
+        <div class="upload-card" id="upload-zone">
+          <input type="file" id="file-input" accept=".pdf" multiple aria-label="Select PDF files" />
+          <div class="upload-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          </div>
+          <h2>Drop PDF files here</h2>
+          <p>or click to browse your files</p>
+          <button class="btn-upload" onclick="document.getElementById('file-input').click();event.stopPropagation();">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            Select PDF Files
+          </button>
+          <div class="upload-hint">PDF files only · Multiple files supported · Processed locally</div>
+        </div>
+
+        <!-- FILE LIST (sortable) -->
+        <div id="file-list-container" class="hidden">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-3);">
+            <strong style="font-size:var(--text-sm);">Files to merge <span id="file-count">(0)</span></strong>
+            <button class="btn-secondary" onclick="addMoreFiles()">+ Add More</button>
+          </div>
+          <div id="sortable-list"></div>
+
+          <div class="tool-actions" style="margin-top:var(--space-5);">
+            <button class="btn-action" id="merge-btn" onclick="mergePDFs()">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 6H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-3"/><polyline points="15 3 12 6 9 3"/></svg>
+              Merge PDFs
+            </button>
+            <button class="btn-secondary" onclick="resetAll()">↺ Start over</button>
+          </div>
+        </div>
+
+        <!-- STATUS -->
+        <div id="status-msg" class="status-message hidden"></div>
+        <div id="progress-wrap" class="progress-wrap hidden"><div class="progress-bar" id="progress-bar"></div></div>
+
+        <!-- RESULT -->
+        <div id="result-card" class="result-card hidden">
+          <h3>✅ PDFs Merged Successfully!</h3>
+          <p id="result-info">Your merged PDF is ready to download.</p>
+          <button class="btn-download" id="download-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Merged PDF
+          </button>
+          <br><br>
+          <button class="btn-secondary" onclick="resetAll()" style="margin:0 auto;">Merge more files</button>
+        </div>
+
+        <!-- CONTENT -->
+        <div class="content-sections">
+          <div class="content-section">
+            <h2>How to Merge PDF Files</h2>
+            <div class="steps-list">
+              <div class="step-item"><div class="step-num">1</div><div class="step-content"><h3>Upload your PDF files</h3><p>Click "Select PDF Files" or drag and drop multiple PDFs into the upload zone. You can add as many files as you need.</p></div></div>
+              <div class="step-item"><div class="step-num">2</div><div class="step-content"><h3>Reorder if needed</h3><p>Drag and drop the files in your preferred order. The first file listed will become the first pages of your merged document.</p></div></div>
+              <div class="step-item"><div class="step-num">3</div><div class="step-content"><h3>Click "Merge PDFs"</h3><p>Hit the Merge button and wait a moment. Your browser will process everything locally — no files leave your device.</p></div></div>
+              <div class="step-item"><div class="step-num">4</div><div class="step-content"><h3>Download your merged PDF</h3><p>Once done, click "Download Merged PDF" to save the combined file to your computer.</p></div></div>
+            </div>
+          </div>
+
+          <div class="content-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <button class="faq-question">Is it safe to merge PDFs here?<svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+                <div class="faq-answer">Yes — your files are 100% private. PDF processing happens entirely in your browser using JavaScript. No files are ever uploaded to any server, and nothing leaves your device. Your documents stay yours.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">How many PDF files can I merge at once?<svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+                <div class="faq-answer">There is no limit on the number of files you can merge. However, merging very large files (100MB+) may take a few seconds depending on your computer's speed, since all processing is done locally in your browser.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">Will the quality of my PDF change after merging?<svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+                <div class="faq-answer">No. The merge operation combines PDF pages without re-encoding or compressing them. All text, images, fonts, and formatting are preserved exactly as they were in the original files.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="content-section">
+            <h2>Other PDF Tools</h2>
+            <div class="tools-grid">
+              <a href="../split-pdf/index.html" class="tool-card"><div class="tool-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="21" y1="6" x2="3" y2="6"/><path d="M3 12h18"/></svg></div><strong>Split PDF</strong><span>Divide into pages</span></a>
+              <a href="../compress-pdf/index.html" class="tool-card"><div class="tool-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 14 10 14 10 20"/><line x1="10" y1="14" x2="21" y2="3"/></svg></div><strong>Compress PDF</strong><span>Reduce file size</span></a>
+              <a href="../pdf-to-jpg/index.html" class="tool-card"><div class="tool-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/></svg></div><strong>PDF to JPG</strong><span>Convert to images</span></a>
+              <a href="../rotate-pdf/index.html" class="tool-card"><div class="tool-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 4v6h6"/><path d="M3.51 15a9 9 0 1 0 .49-4"/></svg></div><strong>Rotate PDF</strong><span>Fix orientation</span></a>
+              <a href="../add-page-numbers/index.html" class="tool-card"><div class="tool-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg></div><strong>Page Numbers</strong><span>Add numbering</span></a>
+              <a href="../jpg-to-pdf/index.html" class="tool-card"><div class="tool-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><polyline points="21 15 16 10 5 21"/></svg></div><strong>JPG to PDF</strong><span>Images to PDF</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <div class="ad-slot ad-slot--sidebar">Ad</div>
+        <div class="sidebar-widget">
+          <h3>Other PDF Tools</h3>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:var(--space-2);">
+            <li><a href="../split-pdf/index.html" style="font-size:var(--text-sm);color:var(--color-text-muted);text-decoration:none;display:flex;align-items:center;gap:var(--space-2);" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--color-text-muted)'">✂️ Split PDF</a></li>
+            <li><a href="../compress-pdf/index.html" style="font-size:var(--text-sm);color:var(--color-text-muted);text-decoration:none;display:flex;align-items:center;gap:var(--space-2);" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--color-text-muted)'">🗜️ Compress PDF</a></li>
+            <li><a href="../pdf-to-jpg/index.html" style="font-size:var(--text-sm);color:var(--color-text-muted);text-decoration:none;" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--color-text-muted)'">🖼️ PDF to JPG</a></li>
+            <li><a href="../jpg-to-pdf/index.html" style="font-size:var(--text-sm);color:var(--color-text-muted);text-decoration:none;" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--color-text-muted)'">📄 JPG to PDF</a></li>
+            <li><a href="../rotate-pdf/index.html" style="font-size:var(--text-sm);color:var(--color-text-muted);text-decoration:none;" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--color-text-muted)'">🔄 Rotate PDF</a></li>
+            <li><a href="../add-page-numbers/index.html" style="font-size:var(--text-sm);color:var(--color-text-muted);text-decoration:none;" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--color-text-muted)'">🔢 Add Page Numbers</a></li>
+          </ul>
+        </div>
+        <div class="ad-slot ad-slot--sidebar">Ad</div>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container container--wide">
+    <div class="footer-bottom">
+      <span>© 2026 PDF Tools Hub</span>
+      <span><a href="../../index.html" style="color:var(--color-primary);">All PDF Tools</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- pdf-lib CDN -->
+<script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+<script src="../../js/faq.js"></script>
+<script src="../../js/upload.js"></script>
+<script>
+  let files = [];
+  let dragSrcIdx = null;
+
+  initUploadZone({
+    zoneId: 'upload-zone',
+    inputId: 'file-input',
+    accept: '.pdf',
+    multiple: true,
+    onFiles: addFiles
+  });
+
+  function addFiles(newFiles) {
+    files = files.concat(newFiles);
+    renderFileList();
+    document.getElementById('upload-zone').classList.add('hidden');
+    document.getElementById('file-list-container').classList.remove('hidden');
+    document.getElementById('result-card').classList.add('hidden');
+  }
+
+  function addMoreFiles() {
+    const input = document.createElement('input');
+    input.type = 'file';
+    input.accept = '.pdf';
+    input.multiple = true;
+    input.onchange = () => { if (input.files.length) addFiles([...input.files]); };
+    input.click();
+  }
+
+  function renderFileList() {
+    const list = document.getElementById('sortable-list');
+    list.innerHTML = '';
+    document.getElementById('file-count').textContent = `(${files.length})`;
+    files.forEach((file, i) => {
+      const item = document.createElement('div');
+      item.className = 'sortable-file';
+      item.draggable = true;
+      item.dataset.idx = i;
+      item.innerHTML = `
+        <div class="drag-handle" title="Drag to reorder">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/>
+            <line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/>
+            <line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/>
+          </svg>
+        </div>
+        <div class="file-item-icon" style="width:32px;height:32px;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+          </svg>
+        </div>
+        <div class="file-info">
+          <div class="file-name">${file.name}</div>
+          <div class="file-size">${formatBytes(file.size)}</div>
+        </div>
+        <span style="background:var(--color-primary-light);color:var(--color-primary);font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;">${i+1}</span>
+        <button class="file-item-remove" onclick="removeFile(${i})" title="Remove">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>`;
+
+      // Drag-to-reorder
+      item.addEventListener('dragstart', () => { dragSrcIdx = i; item.classList.add('dragging'); });
+      item.addEventListener('dragend', () => item.classList.remove('dragging'));
+      item.addEventListener('dragover', e => { e.preventDefault(); });
+      item.addEventListener('drop', e => {
+        e.preventDefault();
+        if (dragSrcIdx === null || dragSrcIdx === i) return;
+        const moved = files.splice(dragSrcIdx, 1)[0];
+        files.splice(i, 0, moved);
+        dragSrcIdx = null;
+        renderFileList();
+      });
+
+      list.appendChild(item);
+    });
+  }
+
+  function removeFile(idx) {
+    files.splice(idx, 1);
+    if (files.length === 0) resetAll();
+    else renderFileList();
+  }
+
+  function resetAll() {
+    files = [];
+    document.getElementById('upload-zone').classList.remove('hidden');
+    document.getElementById('file-list-container').classList.add('hidden');
+    document.getElementById('result-card').classList.add('hidden');
+    document.getElementById('status-msg').classList.add('hidden');
+    document.getElementById('progress-wrap').classList.add('hidden');
+    document.getElementById('sortable-list').innerHTML = '';
+  }
+
+  async function mergePDFs() {
+    if (files.length < 2) {
+      showStatus('status-msg', '⚠️ Please add at least 2 PDF files to merge.', 'error');
+      return;
+    }
+    const btn = document.getElementById('merge-btn');
+    btn.disabled = true;
+    document.getElementById('progress-wrap').classList.remove('hidden');
+    showStatus('status-msg', '⏳ Merging your PDFs…', 'processing');
+
+    try {
+      const { PDFDocument } = PDFLib;
+      const mergedPdf = await PDFDocument.create();
+
+      for (let i = 0; i < files.length; i++) {
+        showProgress('progress-bar', Math.round((i / files.length) * 85));
+        const bytes = await files[i].arrayBuffer();
+        const pdf = await PDFDocument.load(bytes);
+        const pages = await mergedPdf.copyPages(pdf, pdf.getPageIndices());
+        pages.forEach(p => mergedPdf.addPage(p));
+      }
+
+      showProgress('progress-bar', 95);
+      const mergedBytes = await mergedPdf.save();
+      showProgress('progress-bar', 100);
+
+      const blob = new Blob([mergedBytes], { type: 'application/pdf' });
+      const totalPages = (await PDFLib.PDFDocument.load(mergedBytes)).getPageCount();
+
+      showStatus('status-msg', `✅ Merged! ${files.length} files · ${totalPages} pages · ${formatBytes(blob.size)}`, 'success');
+      document.getElementById('result-info').textContent = `${files.length} files merged · ${totalPages} total pages · ${formatBytes(blob.size)}`;
+      document.getElementById('result-card').classList.remove('hidden');
+      document.getElementById('download-btn').onclick = () => downloadBlob(blob, 'merged.pdf');
+      document.getElementById('file-list-container').classList.add('hidden');
+
+    } catch (e) {
+      showStatus('status-msg', '❌ Error: ' + e.message + '. Make sure all files are valid PDFs.', 'error');
+      console.error(e);
+    }
+    btn.disabled = false;
+  }
+</script>
+</body>
+</html>

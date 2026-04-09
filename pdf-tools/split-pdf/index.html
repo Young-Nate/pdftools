@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Split PDF Online Free — Extract Pages from PDF | PDF Tools Hub</title>
+  <meta name="description" content="Split a PDF into separate pages or custom page ranges online for free. No signup, no uploads. Extract exactly the pages you need — 100% browser-based with WebAssembly." />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Split PDF Online Free — PDF Tools Hub" />
+  <meta property="og:description" content="Split a PDF into separate pages or custom page ranges online for free. No signup, no uploads. Extract exactly the pages you need — 100% browser-based with WebAssembly." />
+  <meta property="og:url" content="https://pdftools-rouge.vercel.app/pdf-tools/split-pdf/" />
+  <meta property="og:site_name" content="PDF Tools Hub" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Split PDF Online Free — PDF Tools Hub" />
+  <meta name="twitter:description" content="Split a PDF into separate pages or custom page ranges online for free. No signup, no uploads. Extract exactly the pages you need — 100% browser-based with WebAssembly." />
+
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://pdftools-rouge.vercel.app/pdf-tools/split-pdf/" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Split PDF Online","url":"https://pdftools-rouge.vercel.app/pdf-tools/split-pdf/","applicationCategory":"UtilityApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Split a PDF into separate pages or custom page ranges online for free. No signup, no uploads. 100% browser-based with WebAssembly."}
+  </script>
+  <!-- Open Graph -->
+
+  <!-- Twitter Card -->
+  <link rel="stylesheet" href="../../css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container container--wide">
+    <a href="../../index.html" class="logo">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="7" fill="#e63946" opacity="0.12"/><path d="M8 6h8l6 6v10a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z" fill="#e63946" opacity="0.2"/><path d="M16 6l6 6h-6V6z" fill="#e63946"/><rect x="9" y="13" width="10" height="1.5" rx="0.75" fill="#e63946"/><rect x="9" y="16" width="7" height="1.5" rx="0.75" fill="#e63946" opacity="0.6"/></svg>
+      PDF<span class="logo-accent">Tools</span>Hub
+    </a>
+    <nav aria-label="Main navigation"><ul class="nav-links">
+      <li><a href="../../index.html">All Tools</a></li>
+      <li><a href="../merge-pdf/index.html">Merge PDF</a></li>
+      <li><a href="../compress-pdf/index.html">Compress PDF</a></li>
+    </ul></nav>
+    <div class="header-actions"></div>
+  </div>
+</header>
+
+<main class="tool-page">
+  <div class="container container--wide">
+    <nav class="breadcrumb"><a href="../../index.html">Home</a><span>›</span><span>Split PDF</span></nav>
+
+    <div class="tool-header">
+      <div class="tool-tag">✂️ Organize · Free</div>
+      <h1>Split PDF Online Free</h1>
+      <p>Extract all pages as individual PDFs, or split by custom page ranges. Fast, private, and 100% in your browser — no files leave your device.</p>
+    </div>
+
+    <!-- AD BANNER -->
+    <div class="ad-slot ad-slot--banner">Advertisement</div>
+
+    <div class="page-layout">
+      <div class="main-col">
+        <!-- UPLOAD ZONE -->
+        <div class="upload-card" id="upload-zone">
+          <input type="file" id="file-input" accept=".pdf" aria-label="Select a PDF file" />
+          <div class="upload-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          </div>
+          <h2>Drop your PDF here</h2>
+          <p>or click to browse your files</p>
+          <button class="btn-upload" onclick="document.getElementById('file-input').click();event.stopPropagation();">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            Select PDF File
+          </button>
+          <div class="upload-hint">Single PDF only · Processed locally · No uploads</div>
+        </div>
+
+        <!-- TOOL PANEL -->
+        <div id="tool-panel" class="hidden">
+          <div class="file-panel">
+            <div class="file-panel-header">
+              <div class="file-info-display">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                <div>
+                  <div class="file-name" id="selected-filename">file.pdf</div>
+                  <div class="file-size" id="selected-info">0 pages</div>
+                </div>
+              </div>
+              <button class="btn-secondary btn-sm" onclick="resetAll()">✕ Change file</button>
+            </div>
+          </div>
+
+          <div class="options-panel">
+            <h3>Split Options</h3>
+            <div class="option-group">
+              <label class="option-radio">
+                <input type="radio" name="split-mode" value="all" checked onchange="toggleCustomRange()" />
+                <span>Split all pages — extract each page as a separate PDF</span>
+              </label>
+              <label class="option-radio">
+                <input type="radio" name="split-mode" value="custom" onchange="toggleCustomRange()" />
+                <span>Custom ranges — define which pages go in each output file</span>
+              </label>
+            </div>
+            <div id="custom-range-panel" class="hidden" style="margin-top:var(--space-4);">
+              <label style="display:block;font-size:var(--text-sm);font-weight:600;margin-bottom:var(--space-2);">Page ranges <span style="color:var(--color-text-muted);font-weight:400;">(e.g. 1-3, 4-6, 7)</span></label>
+              <input type="text" id="range-input" class="text-input" placeholder="1-3, 4-6, 7" aria-label="Page ranges" />
+              <p style="font-size:var(--text-xs);color:var(--color-text-muted);margin-top:var(--space-2);">Each comma-separated entry becomes a separate output PDF. Use a hyphen for ranges (1-5) or a single number for one page.</p>
+            </div>
+          </div>
+
+          <div class="tool-actions">
+            <button class="btn-action" id="split-btn" onclick="splitPDF()">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="21" y1="6" x2="3" y2="6"/><path d="M3 12h18"/><line x1="21" y1="18" x2="3" y2="18"/></svg>
+              Split PDF
+            </button>
+            <button class="btn-secondary" onclick="resetAll()">↺ Start over</button>
+          </div>
+
+          <div id="status-msg" class="status-message hidden"></div>
+          <div id="progress-wrap" class="progress-wrap hidden"><div class="progress-bar" id="progress-bar"></div></div>
+
+          <div id="result-card" class="result-card hidden">
+            <h3>✅ PDF Split Successfully!</h3>
+            <p id="result-info">Your files are ready.</p>
+            <button class="btn-download" id="download-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download Split Files
+            </button>
+            <br><br>
+            <button class="btn-secondary" onclick="resetAll()" style="margin:0 auto;">Split another PDF</button>
+          </div>
+        </div>
+
+        <!-- CONTENT -->
+        <div class="content-sections">
+          <div class="content-section">
+            <h2>How to Split a PDF</h2>
+            <div class="steps-list">
+              <div class="step-item"><div class="step-num">1</div><div class="step-content"><h3>Upload your PDF</h3><p>Click "Select PDF File" or drag and drop your document into the upload zone. Only one PDF file is needed.</p></div></div>
+              <div class="step-item"><div class="step-num">2</div><div class="step-content"><h3>Choose a split mode</h3><p>Select "Split all pages" to extract every page individually, or choose "Custom ranges" to define your own groups (e.g. 1-3, 4-6, 7).</p></div></div>
+              <div class="step-item"><div class="step-num">3</div><div class="step-content"><h3>Click "Split PDF"</h3><p>Your browser processes the PDF locally and creates all output files instantly. No server needed.</p></div></div>
+              <div class="step-item"><div class="step-num">4</div><div class="step-content"><h3>Download your files</h3><p>If you split into multiple files, they download as a convenient ZIP archive. A single output file downloads directly.</p></div></div>
+            </div>
+          </div>
+
+          <div class="content-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <button class="faq-question">Can I extract just a few pages from a large PDF?<svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+                <div class="faq-answer">Yes. Use "Custom ranges" and enter the pages you want, for example: <code>3-5</code> to extract pages 3, 4, and 5 into one PDF, or <code>3-5, 10, 12-14</code> to get multiple output files.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">How are multiple output files delivered?<svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+                <div class="faq-answer">When splitting into 2 or more files, they are packaged into a ZIP archive that downloads automatically. If your split results in a single PDF, it downloads directly without a ZIP.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">Is my PDF uploaded to a server?<svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+                <div class="faq-answer">No. Everything happens 100% in your browser. Your PDF is never sent to any server — it stays on your device throughout the entire process. This makes the tool completely private and secure.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="content-section">
+            <h2>Other PDF Tools</h2>
+            <div class="tools-grid">
+              <a href="../merge-pdf/index.html" class="tool-card"><div class="tool-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 6H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-3"/><polyline points="15 3 12 6 9 3"/></svg></div><strong>Merge PDF</strong><span>Combine into one</span></a>
+              <a href="../compress-pdf/index.html" class="tool-card"><div class="tool-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 14 10 14 10 20"/><line x1="10" y1="14" x2="21" y2="3"/></svg></div><strong>Compress PDF</strong><span>Reduce file size</span></a>
+              <a href="../pdf-to-jpg/index.html" class="tool-card"><div class="tool-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/></svg></div><strong>PDF to JPG</strong><span>Convert to images</span></a>
+              <a href="../rotate-pdf/index.html" class="tool-card"><div class="tool-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 4v6h6"/><path d="M3.51 15a9 9 0 1 0 .49-4"/></svg></div><strong>Rotate PDF</strong><span>Fix orientation</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <div class="ad-slot ad-slot--sidebar">Ad</div>
+        <div class="sidebar-widget">
+          <h3>Other PDF Tools</h3>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:var(--space-2);">
+            <li><a href="../merge-pdf/index.html" style="font-size:var(--text-sm);color:var(--color-text-muted);text-decoration:none;display:flex;align-items:center;gap:var(--space-2);" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--color-text-muted)'">📂 Merge PDF</a></li>
+            <li><a href="../compress-pdf/index.html" style="font-size:var(--text-sm);color:var(--color-text-muted);text-decoration:none;" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--color-text-muted)'">🗜️ Compress PDF</a></li>
+            <li><a href="../pdf-to-jpg/index.html" style="font-size:var(--text-sm);color:var(--color-text-muted);text-decoration:none;" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--color-text-muted)'">🖼️ PDF to JPG</a></li>
+            <li><a href="../jpg-to-pdf/index.html" style="font-size:var(--text-sm);color:var(--color-text-muted);text-decoration:none;" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--color-text-muted)'">📄 JPG to PDF</a></li>
+            <li><a href="../rotate-pdf/index.html" style="font-size:var(--text-sm);color:var(--color-text-muted);text-decoration:none;" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--color-text-muted)'">🔄 Rotate PDF</a></li>
+            <li><a href="../add-page-numbers/index.html" style="font-size:var(--text-sm);color:var(--color-text-muted);text-decoration:none;" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--color-text-muted)'">🔢 Add Page Numbers</a></li>
+          </ul>
+        </div>
+        <div class="ad-slot ad-slot--sidebar">Ad</div>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container container--wide">
+    <div class="footer-bottom">
+      <span>© 2026 PDF Tools Hub</span>
+      <span><a href="../../index.html" style="color:var(--color-primary);">All PDF Tools</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- pdf-lib CDN -->
+<script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+<script src="../../js/faq.js"></script>
+<script src="../../js/upload.js"></script>
+<script>
+  let currentFile = null;
+  let pageCount = 0;
+  let resultBlobs = []; // [{name, blob}]
+
+  // Inline styles for new elements
+  const style = document.createElement('style');
+  style.textContent = `
+    .file-panel { background:var(--color-primary-light); border:1.5px solid var(--color-primary); border-radius:var(--radius-lg); padding:var(--space-4); margin-bottom:var(--space-5); }
+    .file-panel-header { display:flex; align-items:center; justify-content:space-between; gap:var(--space-3); flex-wrap:wrap; }
+    .file-info-display { display:flex; align-items:center; gap:var(--space-3); }
+    .option-group { display:flex; flex-direction:column; gap:var(--space-3); }
+    .option-radio { display:flex; align-items:flex-start; gap:var(--space-3); cursor:pointer; font-size:var(--text-sm); }
+    .option-radio input[type=radio] { margin-top:3px; accent-color:var(--color-primary); flex-shrink:0; }
+    .text-input { width:100%; padding:var(--space-3) var(--space-4); border:1.5px solid var(--color-border); border-radius:var(--radius-md); font-size:var(--text-base); font-family:inherit; background:#fff; color:var(--color-text); outline:none; transition:border-color 0.18s; }
+    .text-input:focus { border-color:var(--color-primary); box-shadow:0 0 0 3px color-mix(in oklab, var(--color-primary) 12%, transparent); }
+    .btn-sm { padding:var(--space-2) var(--space-3); font-size:var(--text-xs); }
+    code { background:var(--color-primary-light); color:var(--color-primary); padding:1px 5px; border-radius:3px; font-size:0.9em; }
+  `;
+  document.head.appendChild(style);
+
+  initUploadZone({
+    zoneId: 'upload-zone',
+    inputId: 'file-input',
+    accept: '.pdf',
+    multiple: false,
+    onFiles: handleFile
+  });
+
+  function handleFile(files) {
+    if (!files.length) return;
+    currentFile = files[0];
+    loadFileInfo(currentFile);
+  }
+
+  async function loadFileInfo(file) {
+    try {
+      const bytes = await file.arrayBuffer();
+      const { PDFDocument } = PDFLib;
+      const pdf = await PDFDocument.load(bytes);
+      pageCount = pdf.getPageCount();
+      document.getElementById('selected-filename').textContent = file.name;
+      document.getElementById('selected-info').textContent = `${pageCount} page${pageCount !== 1 ? 's' : ''} · ${formatBytes(file.size)}`;
+      document.getElementById('upload-zone').classList.add('hidden');
+      document.getElementById('tool-panel').classList.remove('hidden');
+      document.getElementById('result-card').classList.add('hidden');
+      document.getElementById('status-msg').classList.add('hidden');
+      document.getElementById('progress-wrap').classList.add('hidden');
+    } catch (e) {
+      showStatus('status-msg', '❌ Could not read this PDF. Make sure it\'s a valid PDF file.', 'error');
+    }
+  }
+
+  function toggleCustomRange() {
+    const mode = document.querySelector('input[name="split-mode"]:checked').value;
+    document.getElementById('custom-range-panel').classList.toggle('hidden', mode !== 'custom');
+  }
+
+  function parseRanges(input, maxPage) {
+    const parts = input.split(',').map(s => s.trim()).filter(Boolean);
+    const ranges = [];
+    for (const part of parts) {
+      if (part.includes('-')) {
+        const [a, b] = part.split('-').map(Number);
+        if (isNaN(a) || isNaN(b) || a < 1 || b > maxPage || a > b) throw new Error(`Invalid range "${part}"`);
+        ranges.push({ label: `pages-${a}-${b}`, indices: Array.from({length: b - a + 1}, (_, i) => a - 1 + i) });
+      } else {
+        const n = Number(part);
+        if (isNaN(n) || n < 1 || n > maxPage) throw new Error(`Invalid page number "${part}"`);
+        ranges.push({ label: `page-${n}`, indices: [n - 1] });
+      }
+    }
+    if (!ranges.length) throw new Error('No ranges specified');
+    return ranges;
+  }
+
+  async function splitPDF() {
+    if (!currentFile) return;
+    const btn = document.getElementById('split-btn');
+    btn.disabled = true;
+    document.getElementById('progress-wrap').classList.remove('hidden');
+    showStatus('status-msg', '⏳ Splitting your PDF…', 'processing');
+    resultBlobs = [];
+
+    try {
+      const { PDFDocument } = PDFLib;
+      const bytes = await currentFile.arrayBuffer();
+      const srcPdf = await PDFDocument.load(bytes);
+      const mode = document.querySelector('input[name="split-mode"]:checked').value;
+
+      let groups;
+      if (mode === 'all') {
+        groups = Array.from({length: pageCount}, (_, i) => ({ label: `page-${i+1}`, indices: [i] }));
+      } else {
+        const rangeInput = document.getElementById('range-input').value.trim();
+        if (!rangeInput) { showStatus('status-msg', '⚠️ Please enter at least one page range.', 'error'); btn.disabled = false; return; }
+        groups = parseRanges(rangeInput, pageCount);
+      }
+
+      for (let g = 0; g < groups.length; g++) {
+        showProgress('progress-bar', Math.round(((g + 1) / groups.length) * 90));
+        const out = await PDFDocument.create();
+        const pages = await out.copyPages(srcPdf, groups[g].indices);
+        pages.forEach(p => out.addPage(p));
+        const outBytes = await out.save();
+        resultBlobs.push({
+          name: `split-${groups[g].label}.pdf`,
+          blob: new Blob([outBytes], { type: 'application/pdf' })
+        });
+      }
+
+      showProgress('progress-bar', 100);
+
+      const baseName = currentFile.name.replace(/\.pdf$/i, '');
+
+      if (resultBlobs.length === 1) {
+        const { blob, name } = resultBlobs[0];
+        document.getElementById('result-info').textContent = `1 file · ${formatBytes(blob.size)}`;
+        document.getElementById('download-btn').textContent = '';
+        document.getElementById('download-btn').innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download PDF';
+        document.getElementById('download-btn').onclick = () => downloadBlob(blob, name);
+        showStatus('status-msg', `✅ Split into 1 file · ${formatBytes(blob.size)}`, 'success');
+      } else {
+        // ZIP multiple files
+        showStatus('status-msg', `⏳ Creating ZIP with ${resultBlobs.length} files…`, 'processing');
+        const JSZipScript = document.createElement('script');
+        JSZipScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js';
+        document.head.appendChild(JSZipScript);
+        await new Promise(r => { JSZipScript.onload = r; });
+
+        const zip = new JSZip();
+        resultBlobs.forEach(({name, blob}) => zip.file(name, blob));
+        const zipBlob = await zip.generateAsync({ type: 'blob' });
+        const totalSize = resultBlobs.reduce((s, {blob}) => s + blob.size, 0);
+        document.getElementById('result-info').textContent = `${resultBlobs.length} files · ${formatBytes(zipBlob.size)} ZIP`;
+        document.getElementById('download-btn').innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download ZIP Archive';
+        document.getElementById('download-btn').onclick = () => downloadBlob(zipBlob, `${baseName}-split.zip`);
+        showStatus('status-msg', `✅ Split into ${resultBlobs.length} files · ${formatBytes(zipBlob.size)} ZIP`, 'success');
+      }
+
+      document.getElementById('result-card').classList.remove('hidden');
+
+    } catch (e) {
+      showStatus('status-msg', '❌ Error: ' + e.message, 'error');
+      console.error(e);
+    }
+    btn.disabled = false;
+  }
+
+  function resetAll() {
+    currentFile = null;
+    pageCount = 0;
+    resultBlobs = [];
+    document.getElementById('upload-zone').classList.remove('hidden');
+    document.getElementById('tool-panel').classList.add('hidden');
+    document.getElementById('result-card').classList.add('hidden');
+    document.getElementById('status-msg').classList.add('hidden');
+    document.getElementById('progress-wrap').classList.add('hidden');
+    document.getElementById('range-input').value = '';
+    document.querySelector('input[name="split-mode"][value="all"]').checked = true;
+    document.getElementById('custom-range-panel').classList.add('hidden');
+  }
+</script>
+</body>
+</html>

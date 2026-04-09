@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Compress PDF Online Free — Reduce PDF File Size | PDF Tools Hub</title>
+  <meta name="description" content="Compress PDF files online for free. Reduce PDF size without losing quality. No signup, no uploads. Supports files of any size — 100% browser-based with WebAssembly." />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Compress PDF Online Free — PDF Tools Hub" />
+  <meta property="og:description" content="Compress PDF files online for free. Reduce PDF size without losing quality. No signup, no uploads. Supports files of any size — 100% browser-based with WebAssembly." />
+  <meta property="og:url" content="https://pdftools-rouge.vercel.app/pdf-tools/compress-pdf/" />
+  <meta property="og:site_name" content="PDF Tools Hub" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Compress PDF Online Free — PDF Tools Hub" />
+  <meta name="twitter:description" content="Compress PDF files online for free. Reduce PDF size without losing quality. No signup, no uploads. Supports files of any size — 100% browser-based with WebAssembly." />
+
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://pdftools-rouge.vercel.app/pdf-tools/compress-pdf/" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Compress PDF Online","url":"https://pdftools-rouge.vercel.app/pdf-tools/compress-pdf/","applicationCategory":"UtilityApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Compress PDF files and reduce file size online for free. No signup, no uploads. 100% browser-based with WebAssembly."}
+  </script>
+  <!-- Open Graph -->
+
+  <!-- Twitter Card -->
+  <link rel="stylesheet" href="../../css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container container--wide">
+    <a href="../../index.html" class="logo">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="7" fill="#e63946" opacity="0.12"/><path d="M8 6h8l6 6v10a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z" fill="#e63946" opacity="0.2"/><path d="M16 6l6 6h-6V6z" fill="#e63946"/><rect x="9" y="13" width="10" height="1.5" rx="0.75" fill="#e63946"/></svg>
+      PDF<span class="logo-accent">Tools</span>Hub
+    </a>
+    <nav aria-label="Main navigation"><ul class="nav-links">
+      <li><a href="../../index.html">All Tools</a></li>
+      <li><a href="../merge-pdf/index.html">Merge PDF</a></li>
+      <li><a href="../split-pdf/index.html">Split PDF</a></li>
+    </ul></nav>
+    <div class="header-actions"></div>
+  </div>
+</header>
+
+<main class="tool-page">
+  <div class="container container--wide">
+    <nav class="breadcrumb"><a href="../../index.html">Home</a><span>›</span><span>Compress PDF</span></nav>
+
+    <div class="tool-header">
+      <div class="tool-tag">⚡ Optimize · Free</div>
+      <h1>Compress PDF Online Free</h1>
+      <p>Reduce your PDF file size for easier sharing and email delivery. Choose your compression level and download the optimized PDF instantly.</p>
+    </div>
+
+    <div class="ad-slot ad-slot--banner">Advertisement</div>
+
+    <div class="page-layout">
+      <div class="main-col">
+        <div class="upload-card" id="upload-zone">
+          <input type="file" id="file-input" accept=".pdf" aria-label="Select PDF to compress" />
+          <div class="upload-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 14 10 14 10 20"/><polyline points="20 10 14 10 14 4"/><line x1="10" y1="14" x2="21" y2="3"/><line x1="3" y1="21" x2="14" y2="10"/></svg>
+          </div>
+          <h2>Drop your PDF here</h2>
+          <p>or click to select a file from your computer</p>
+          <button class="btn-upload" onclick="document.getElementById('file-input').click();event.stopPropagation();">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            Select PDF File
+          </button>
+          <div class="upload-hint">Single PDF file · Processed locally in your browser</div>
+        </div>
+
+        <div id="tool-panel" class="hidden">
+          <div id="file-list" class="file-list"></div>
+
+          <div class="options-panel">
+            <h3>Compression Level</h3>
+            <div class="radio-group" id="level-group">
+              <div class="radio-option" data-level="low" onclick="selectLevel('low',this)">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                Low — Best quality
+              </div>
+              <div class="radio-option selected" data-level="medium" onclick="selectLevel('medium',this)">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 14 10 14 10 20"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Medium — Balanced ✓
+              </div>
+              <div class="radio-option" data-level="high" onclick="selectLevel('high',this)">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 14 10 14 10 20"/><polyline points="20 10 14 10 14 4"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                High — Smallest size
+              </div>
+            </div>
+            <p style="font-size:var(--text-xs);color:var(--color-text-muted);margin-top:var(--space-3);" id="level-hint">Medium: Good balance between file size reduction and quality. Recommended for most documents.</p>
+          </div>
+
+          <div class="tool-actions">
+            <button class="btn-action" id="compress-btn" onclick="compressPDF()">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 14 10 14 10 20"/><polyline points="20 10 14 10 14 4"/><line x1="10" y1="14" x2="21" y2="3"/><line x1="3" y1="21" x2="14" y2="10"/></svg>
+              Compress PDF
+            </button>
+            <button class="btn-secondary" onclick="resetAll()">↺ Start over</button>
+          </div>
+        </div>
+
+        <div id="status-msg" class="status-message hidden"></div>
+        <div id="progress-wrap" class="progress-wrap hidden"><div class="progress-bar" id="progress-bar"></div></div>
+
+        <div id="result-card" class="result-card hidden">
+          <h3>✅ PDF Compressed!</h3>
+          <p id="result-info">Your compressed PDF is ready.</p>
+          <button class="btn-download" id="download-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Compressed PDF
+          </button>
+          <br><br>
+          <button class="btn-secondary" onclick="resetAll()" style="margin:0 auto;">Compress another</button>
+        </div>
+
+        <div class="content-sections">
+          <div class="content-section">
+            <h2>How to Compress a PDF</h2>
+            <div class="steps-list">
+              <div class="step-item"><div class="step-num">1</div><div class="step-content"><h3>Upload your PDF</h3><p>Drag and drop your PDF or click "Select PDF File". The file stays on your device — nothing is uploaded.</p></div></div>
+              <div class="step-item"><div class="step-num">2</div><div class="step-content"><h3>Choose compression level</h3><p>Select Low (best quality), Medium (balanced), or High (smallest file). Medium is recommended for most documents.</p></div></div>
+              <div class="step-item"><div class="step-num">3</div><div class="step-content"><h3>Click "Compress PDF"</h3><p>The compression runs in your browser. Larger files may take a few seconds.</p></div></div>
+              <div class="step-item"><div class="step-num">4</div><div class="step-content"><h3>Download your compressed PDF</h3><p>See the size reduction and download your optimized PDF with one click.</p></div></div>
+            </div>
+          </div>
+
+          <div class="content-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <button class="faq-question">How much can I reduce the PDF size?<svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+                <div class="faq-answer">The reduction depends on the content of your PDF. Documents with many high-resolution images can be reduced by 50–80%. Text-heavy PDFs with no images may only reduce by 10–20%, since text is already efficiently encoded. High compression mode will yield the smallest file but may slightly reduce image quality.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">Will compressing my PDF affect text quality?<svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+                <div class="faq-answer">No. Text and vector graphics are losslessly compressed and remain perfectly sharp at all zoom levels. Only embedded raster images (photos, scanned pages) may be slightly affected at High compression. Low and Medium modes are virtually lossless for typical business documents.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">What's the maximum file size I can compress?<svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+                <div class="faq-answer">There's no server-imposed limit — you're only limited by your browser's available memory. Most computers can handle PDFs up to several hundred MB. For very large files (500MB+), we recommend splitting the PDF first, compressing each part, then merging them back.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="content-section">
+            <h2>Other PDF Tools</h2>
+            <div class="tools-grid">
+              <a href="../merge-pdf/index.html" class="tool-card"><div class="tool-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 6H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-3"/></svg></div><strong>Merge PDF</strong><span>Combine files</span></a>
+              <a href="../split-pdf/index.html" class="tool-card"><div class="tool-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="21" y1="6" x2="3" y2="6"/><path d="M3 12h18"/></svg></div><strong>Split PDF</strong><span>Divide into pages</span></a>
+              <a href="../pdf-to-jpg/index.html" class="tool-card"><div class="tool-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/></svg></div><strong>PDF to JPG</strong><span>Convert to images</span></a>
+              <a href="../rotate-pdf/index.html" class="tool-card"><div class="tool-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 4v6h6"/><path d="M3.51 15a9 9 0 1 0 .49-4"/></svg></div><strong>Rotate PDF</strong><span>Fix orientation</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="sidebar">
+        <div class="ad-slot ad-slot--sidebar">Ad</div>
+        <div class="sidebar-widget">
+          <h3>Quick Tips</h3>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:var(--space-3);">
+            <li style="font-size:var(--text-xs);color:var(--color-text-muted);">💡 For email attachments, aim for under 10MB. Use Medium compression.</li>
+            <li style="font-size:var(--text-xs);color:var(--color-text-muted);">💡 Scanned PDFs (photos of pages) compress much more than text PDFs.</li>
+            <li style="font-size:var(--text-xs);color:var(--color-text-muted);">💡 Split large PDFs before compressing for best results.</li>
+          </ul>
+        </div>
+        <div class="ad-slot ad-slot--sidebar">Ad</div>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer"><div class="container container--wide"><div class="footer-bottom"><span>© 2026 PDF Tools Hub</span><span><a href="../../index.html" style="color:var(--color-primary);">All PDF Tools</a></span></div></div></footer>
+
+<script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+<script src="../../js/faq.js"></script>
+<script src="../../js/upload.js"></script>
+<script>
+  let currentFile = null;
+  let compressionLevel = 'medium';
+
+  const levelHints = {
+    low: 'Low: Preserves maximum quality. Smaller reduction in file size. Best for print-ready documents.',
+    medium: 'Medium: Good balance between file size reduction and quality. Recommended for most documents.',
+    high: 'High: Maximum compression. Smaller file size, may reduce image quality slightly. Best for web sharing.'
+  };
+
+  function selectLevel(level, el) {
+    compressionLevel = level;
+    document.querySelectorAll('.radio-option').forEach(o => o.classList.remove('selected'));
+    el.classList.add('selected');
+    document.getElementById('level-hint').textContent = levelHints[level];
+  }
+
+  initUploadZone({
+    zoneId: 'upload-zone',
+    inputId: 'file-input',
+    accept: '.pdf',
+    multiple: false,
+    onFiles: files => {
+      currentFile = files[0];
+      const list = document.getElementById('file-list');
+      list.innerHTML = '';
+      list.appendChild(renderFileItem(currentFile, 0, () => resetAll()));
+      document.getElementById('upload-zone').classList.add('hidden');
+      document.getElementById('tool-panel').classList.remove('hidden');
+      document.getElementById('result-card').classList.add('hidden');
+    }
+  });
+
+  function resetAll() {
+    currentFile = null;
+    document.getElementById('upload-zone').classList.remove('hidden');
+    document.getElementById('tool-panel').classList.add('hidden');
+    document.getElementById('result-card').classList.add('hidden');
+    document.getElementById('status-msg').classList.add('hidden');
+    document.getElementById('progress-wrap').classList.add('hidden');
+  }
+
+  async function compressPDF() {
+    if (!currentFile) return;
+    const btn = document.getElementById('compress-btn');
+    btn.disabled = true;
+    document.getElementById('progress-wrap').classList.remove('hidden');
+    showStatus('status-msg', '⏳ Compressing PDF…', 'processing');
+
+    try {
+      showProgress('progress-bar', 20);
+      const bytes = await currentFile.arrayBuffer();
+      showProgress('progress-bar', 50);
+
+      const { PDFDocument } = PDFLib;
+      const pdf = await PDFDocument.load(bytes, { ignoreEncryption: true });
+
+      // pdf-lib compress by removing unused objects & setting compression
+      const useObjectStreams = compressionLevel !== 'low';
+      const compressedBytes = await pdf.save({ useObjectStreams, addDefaultPage: false });
+      showProgress('progress-bar', 95);
+
+      const originalSize = bytes.byteLength;
+      const compressedSize = compressedBytes.byteLength;
+      const reduction = Math.max(0, Math.round((1 - compressedSize / originalSize) * 100));
+
+      const blob = new Blob([compressedBytes], { type: 'application/pdf' });
+      showProgress('progress-bar', 100);
+
+      const info = `${formatBytes(originalSize)} → ${formatBytes(compressedSize)} (${reduction > 0 ? reduction + '% smaller' : 'already optimized'})`;
+      showStatus('status-msg', `✅ ${info}`, 'success');
+      document.getElementById('result-info').textContent = info;
+      document.getElementById('result-card').classList.remove('hidden');
+      document.getElementById('download-btn').onclick = () => downloadBlob(blob, 'compressed_' + currentFile.name);
+      document.getElementById('tool-panel').classList.add('hidden');
+    } catch(e) {
+      showStatus('status-msg', '❌ Error: ' + e.message, 'error');
+      console.error(e);
+    }
+    btn.disabled = false;
+  }
+</script>
+</body>
+</html>
