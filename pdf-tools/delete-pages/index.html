@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Delete PDF Pages Online Free — Remove Pages from PDF | PDF Tools Hub</title>
+  <meta name="description" content="Delete specific pages from a PDF online for free. Upload your PDF, select the pages to remove with checkboxes, and download the result. 100% browser-based — no uploads, no signup." />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Delete PDF Pages Online Free — PDF Tools Hub" />
+  <meta property="og:description" content="Delete specific pages from a PDF online for free. Upload your PDF, select the pages to remove with checkboxes, and download the result. 100% browser-based — no uploads, no signup." />
+  <meta property="og:url" content="https://pdftools-rouge.vercel.app/pdf-tools/delete-pages/" />
+  <meta property="og:site_name" content="PDF Tools Hub" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Delete PDF Pages Online Free — PDF Tools Hub" />
+  <meta name="twitter:description" content="Delete specific pages from a PDF online for free. Upload your PDF, select the pages to remove with checkboxes, and download the result. 100% browser-based — no uploads, no signup." />
+
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://pdftools-rouge.vercel.app/pdf-tools/delete-pages/" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Delete PDF Pages Online","url":"https://pdftools-rouge.vercel.app/pdf-tools/delete-pages/","applicationCategory":"UtilityApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Delete specific pages from a PDF online for free. No signup, no uploads. 100% browser-based."}
+  </script>
+
+  <link rel="stylesheet" href="../../css/style.css" />
+  <style>
+    .page-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+      gap: var(--space-3);
+      margin-top: var(--space-4);
+    }
+    .page-thumb {
+      border: 2px solid var(--color-border);
+      border-radius: 8px;
+      padding: var(--space-2);
+      text-align: center;
+      cursor: pointer;
+      transition: border-color 0.15s, background 0.15s;
+      user-select: none;
+      position: relative;
+    }
+    .page-thumb:hover {
+      border-color: var(--color-primary);
+    }
+    .page-thumb.selected {
+      border-color: var(--color-primary);
+      background: var(--color-primary-light, #fff0f1);
+    }
+    .page-thumb input[type="checkbox"] {
+      position: absolute;
+      top: 6px;
+      left: 6px;
+      width: 16px;
+      height: 16px;
+      accent-color: var(--color-primary);
+      cursor: pointer;
+    }
+    .page-thumb .page-icon {
+      margin: 8px auto 6px;
+      width: 48px;
+      height: 62px;
+      background: #f5f5f5;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--color-border);
+    }
+    .page-thumb .page-num {
+      font-size: 12px;
+      color: var(--color-text-muted);
+      font-weight: 600;
+    }
+    .page-thumb.selected .page-num {
+      color: var(--color-primary);
+    }
+    .delete-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: var(--space-3);
+      margin-top: var(--space-4);
+      padding: var(--space-3) var(--space-4);
+      background: var(--color-surface);
+      border-radius: 8px;
+      border: 1px solid var(--color-border);
+    }
+    .delete-toolbar .selection-info {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+    }
+    .delete-toolbar .selection-info strong {
+      color: var(--color-primary);
+    }
+    .select-btns {
+      display: flex;
+      gap: var(--space-2);
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container container--wide">
+    <a href="../../index.html" class="logo">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="7" fill="#e63946" opacity="0.12"/><path d="M8 6h8l6 6v10a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z" fill="#e63946" opacity="0.2"/><path d="M16 6l6 6h-6V6z" fill="#e63946"/><rect x="9" y="13" width="10" height="1.5" rx="0.75" fill="#e63946"/><rect x="9" y="16" width="7" height="1.5" rx="0.75" fill="#e63946" opacity="0.6"/></svg>
+      PDF<span class="logo-accent">Tools</span>Hub
+    </a>
+    <nav aria-label="Main navigation"><ul class="nav-links">
+      <li><a href="../../index.html">All Tools</a></li>
+      <li><a href="../extract-pages/index.html">Extract Pages</a></li>
+      <li><a href="../merge-pdf/index.html">Merge PDF</a></li>
+    </ul></nav>
+    <div class="header-actions"></div>
+  </div>
+</header>
+
+<main class="tool-page">
+  <div class="container container--wide">
+    <nav class="breadcrumb"><a href="../../index.html">Home</a><span>›</span><span>Delete PDF Pages</span></nav>
+
+    <div class="tool-header">
+      <div class="tool-tag">📂 Organize · Free</div>
+      <h1>Delete PDF Pages Online Free</h1>
+      <p>Remove unwanted pages from any PDF in seconds. Upload your file, tick the pages you want to delete, and download the clean result — no signup, no server uploads.</p>
+    </div>
+
+    <!-- AD BANNER -->
+    <div class="ad-slot ad-slot--banner">Advertisement</div>
+
+    <div class="page-layout">
+      <div class="main-col">
+        <!-- UPLOAD ZONE -->
+        <div class="upload-card" id="upload-zone">
+          <input type="file" id="file-input" accept=".pdf" aria-label="Select a PDF file" />
+          <div class="upload-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          </div>
+          <h2>Drop your PDF here</h2>
+          <p>or click to browse your files</p>
+          <button class="btn-upload" onclick="document.getElementById('file-input').click();event.stopPropagation();">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            Select PDF File
+          </button>
+          <div class="upload-hint">PDF files only · Processed locally in your browser</div>
+        </div>
+
+        <!-- PAGE SELECTOR -->
+        <div id="pages-container" class="hidden">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-2);">
+            <strong style="font-size:var(--text-sm);">Select pages to delete <span id="page-count-label"></span></strong>
+            <button class="btn-secondary" onclick="resetAll()">↺ Change file</button>
+          </div>
+
+          <div class="delete-toolbar">
+            <div class="selection-info">
+              <strong id="selected-count">0</strong> of <span id="total-count">0</span> pages selected for deletion
+            </div>
+            <div class="select-btns">
+              <button class="btn-secondary" onclick="selectAll()" style="font-size:var(--text-sm);padding:4px 12px;">Select All</button>
+              <button class="btn-secondary" onclick="selectNone()" style="font-size:var(--text-sm);padding:4px 12px;">Deselect All</button>
+            </div>
+          </div>
+
+          <div class="page-grid" id="page-grid"></div>
+
+          <div class="tool-actions" style="margin-top:var(--space-5);">
+            <button class="btn-action" id="delete-btn" onclick="deletePages()">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4h6v2"/></svg>
+              Delete Selected Pages
+            </button>
+            <button class="btn-secondary" onclick="resetAll()">↺ Start over</button>
+          </div>
+        </div>
+
+        <!-- STATUS -->
+        <div id="status-msg" class="status-message hidden"></div>
+        <div id="progress-wrap" class="progress-wrap hidden"><div class="progress-bar" id="progress-bar"></div></div>
+
+        <!-- RESULT -->
+        <div id="result-card" class="result-card hidden">
+          <h3>✅ Pages Deleted Successfully!</h3>
+          <p id="result-info">Your PDF is ready to download.</p>
+          <button class="btn-download" id="download-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download PDF
+          </button>
+          <br><br>
+          <button class="btn-secondary" onclick="resetAll()" style="margin:0 auto;">Delete more pages</button>
+        </div>
+
+        <!-- CONTENT -->
+        <div class="content-sections">
+          <div class="content-section">
+            <h2>How to Delete Pages from a PDF</h2>
+            <div class="steps-list">
+              <div class="step-item"><div class="step-num">1</div><div class="step-content"><h3>Upload your PDF</h3><p>Click "Select PDF File" or drag and drop your PDF into the upload zone. The file is loaded directly in your browser — nothing is sent to any server.</p></div></div>
+              <div class="step-item"><div class="step-num">2</div><div class="step-content"><h3>Select pages to delete</h3><p>Click on any page thumbnail (or its checkbox) to mark it for deletion. Selected pages are highlighted in red. Use "Select All" or "Deselect All" for quick selection.</p></div></div>
+              <div class="step-item"><div class="step-num">3</div><div class="step-content"><h3>Click "Delete Selected Pages"</h3><p>Hit the Delete button. The tool will remove every checked page and rebuild the PDF with the remaining pages in original order.</p></div></div>
+              <div class="step-item"><div class="step-num">4</div><div class="step-content"><h3>Download your PDF</h3><p>Click "Download PDF" to save the cleaned-up file to your device. The original file is never modified.</p></div></div>
+            </div>
+          </div>
+
+          <div class="content-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <button class="faq-question">Is my PDF safe when I use this tool?<svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+                <div class="faq-answer">Completely. Your PDF never leaves your device. All processing is done locally in your browser using JavaScript and the pdf-lib library. There are no server uploads, no accounts required, and no data is ever stored anywhere.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">Can I delete multiple pages at once?<svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+                <div class="faq-answer">Yes — you can select as many pages as you like before clicking Delete. Use the checkboxes on each page thumbnail, or use "Select All" to mark every page and then deselect the ones you want to keep.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">Will deleting pages affect the quality of my PDF?<svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+                <div class="faq-answer">No. Pages are removed without any re-encoding or compression. All remaining pages keep their original text, images, fonts, and formatting at exactly the same quality as the source document.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="content-section">
+            <h2>Other PDF Tools</h2>
+            <div class="tools-grid">
+              <a href="../extract-pages/index.html" class="tool-card"><div class="tool-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg></div><strong>Extract Pages</strong><span>Save specific pages</span></a>
+              <a href="../reorder-pages/index.html" class="tool-card"><div class="tool-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg></div><strong>Reorder Pages</strong><span>Rearrange pages</span></a>
+              <a href="../merge-pdf/index.html" class="tool-card"><div class="tool-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 6H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-3"/><polyline points="15 3 12 6 9 3"/></svg></div><strong>Merge PDF</strong><span>Combine files</span></a>
+              <a href="../split-pdf/index.html" class="tool-card"><div class="tool-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="21" y1="6" x2="3" y2="6"/><path d="M3 12h18"/></svg></div><strong>Split PDF</strong><span>Divide into parts</span></a>
+              <a href="../add-watermark/index.html" class="tool-card"><div class="tool-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><strong>Add Watermark</strong><span>Stamp text on pages</span></a>
+              <a href="../rotate-pdf/index.html" class="tool-card"><div class="tool-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 4v6h6"/><path d="M3.51 15a9 9 0 1 0 .49-4"/></svg></div><strong>Rotate PDF</strong><span>Fix orientation</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <div class="ad-slot ad-slot--sidebar">Ad</div>
+        <div class="sidebar-widget">
+          <h3>Other PDF Tools</h3>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:var(--space-2);">
+            <li><a href="../extract-pages/index.html" style="font-size:var(--text-sm);color:var(--color-text-muted);text-decoration:none;display:flex;align-items:center;gap:var(--space-2);" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--color-text-muted)'">📄 Extract Pages</a></li>
+            <li><a href="../reorder-pages/index.html" style="font-size:var(--text-sm);color:var(--color-text-muted);text-decoration:none;display:flex;align-items:center;gap:var(--space-2);" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--color-text-muted)'">🔀 Reorder Pages</a></li>
+            <li><a href="../add-watermark/index.html" style="font-size:var(--text-sm);color:var(--color-text-muted);text-decoration:none;display:flex;align-items:center;gap:var(--space-2);" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--color-text-muted)'">🔏 Add Watermark</a></li>
+            <li><a href="../merge-pdf/index.html" style="font-size:var(--text-sm);color:var(--color-text-muted);text-decoration:none;" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--color-text-muted)'">📎 Merge PDF</a></li>
+            <li><a href="../split-pdf/index.html" style="font-size:var(--text-sm);color:var(--color-text-muted);text-decoration:none;" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--color-text-muted)'">✂️ Split PDF</a></li>
+            <li><a href="../compress-pdf/index.html" style="font-size:var(--text-sm);color:var(--color-text-muted);text-decoration:none;" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--color-text-muted)'">🗜️ Compress PDF</a></li>
+            <li><a href="../rotate-pdf/index.html" style="font-size:var(--text-sm);color:var(--color-text-muted);text-decoration:none;" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--color-text-muted)'">🔄 Rotate PDF</a></li>
+            <li><a href="../pdf-to-jpg/index.html" style="font-size:var(--text-sm);color:var(--color-text-muted);text-decoration:none;" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--color-text-muted)'">🖼️ PDF to JPG</a></li>
+            <li><a href="../add-page-numbers/index.html" style="font-size:var(--text-sm);color:var(--color-text-muted);text-decoration:none;" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--color-text-muted)'">🔢 Add Page Numbers</a></li>
+          </ul>
+        </div>
+        <div class="ad-slot ad-slot--sidebar">Ad</div>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container container--wide">
+    <div class="footer-bottom">
+      <span>© 2026 PDF Tools Hub</span>
+      <span><a href="../../index.html" style="color:var(--color-primary);">All PDF Tools</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- pdf-lib CDN -->
+<script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+<script src="../../js/faq.js"></script>
+<script src="../../js/upload.js"></script>
+<script>
+  let pdfFile = null;
+  let totalPages = 0;
+  const selectedPages = new Set(); // 0-based indices
+
+  initUploadZone({
+    zoneId: 'upload-zone',
+    inputId: 'file-input',
+    accept: '.pdf',
+    multiple: false,
+    onFiles: handleFile
+  });
+
+  async function handleFile(files) {
+    if (!files || files.length === 0) return;
+    pdfFile = files[0];
+    showStatus('status-msg', '⏳ Loading PDF…', 'processing');
+    try {
+      const bytes = await pdfFile.arrayBuffer();
+      const pdf = await PDFLib.PDFDocument.load(bytes);
+      totalPages = pdf.getPageCount();
+      selectedPages.clear();
+
+      document.getElementById('upload-zone').classList.add('hidden');
+      document.getElementById('pages-container').classList.remove('hidden');
+      document.getElementById('result-card').classList.add('hidden');
+      document.getElementById('page-count-label').textContent = `(${totalPages} pages)`;
+      document.getElementById('total-count').textContent = totalPages;
+      renderPageGrid(totalPages);
+      showStatus('status-msg', `📄 ${pdfFile.name} loaded — ${totalPages} pages`, 'success');
+    } catch (e) {
+      showStatus('status-msg', '❌ Could not read PDF: ' + e.message, 'error');
+    }
+  }
+
+  function renderPageGrid(count) {
+    const grid = document.getElementById('page-grid');
+    grid.innerHTML = '';
+    for (let i = 0; i < count; i++) {
+      const thumb = document.createElement('div');
+      thumb.className = 'page-thumb';
+      thumb.dataset.page = i;
+      thumb.innerHTML = `
+        <input type="checkbox" id="pg-${i}" data-page="${i}" onchange="togglePage(${i})" />
+        <div class="page-icon">
+          <svg width="20" height="24" viewBox="0 0 20 24" fill="none"><rect x="1" y="1" width="18" height="22" rx="2" fill="#f9f9f9" stroke="#d4d4d4" stroke-width="1.5"/><rect x="4" y="6" width="12" height="1.5" rx="0.75" fill="#ccc"/><rect x="4" y="10" width="10" height="1.5" rx="0.75" fill="#ccc"/><rect x="4" y="14" width="11" height="1.5" rx="0.75" fill="#ccc"/></svg>
+        </div>
+        <div class="page-num">Page ${i + 1}</div>
+      `;
+      thumb.addEventListener('click', (e) => {
+        if (e.target.tagName === 'INPUT') return;
+        const cb = thumb.querySelector('input[type="checkbox"]');
+        cb.checked = !cb.checked;
+        togglePage(i);
+      });
+      grid.appendChild(thumb);
+    }
+    updateSelectionInfo();
+  }
+
+  function togglePage(idx) {
+    const thumb = document.querySelector(`.page-thumb[data-page="${idx}"]`);
+    const cb = document.getElementById(`pg-${idx}`);
+    if (cb.checked) {
+      selectedPages.add(idx);
+      thumb.classList.add('selected');
+    } else {
+      selectedPages.delete(idx);
+      thumb.classList.remove('selected');
+    }
+    updateSelectionInfo();
+  }
+
+  function updateSelectionInfo() {
+    document.getElementById('selected-count').textContent = selectedPages.size;
+  }
+
+  function selectAll() {
+    for (let i = 0; i < totalPages; i++) {
+      selectedPages.add(i);
+      const cb = document.getElementById(`pg-${i}`);
+      const thumb = document.querySelector(`.page-thumb[data-page="${i}"]`);
+      if (cb) cb.checked = true;
+      if (thumb) thumb.classList.add('selected');
+    }
+    updateSelectionInfo();
+  }
+
+  function selectNone() {
+    selectedPages.clear();
+    for (let i = 0; i < totalPages; i++) {
+      const cb = document.getElementById(`pg-${i}`);
+      const thumb = document.querySelector(`.page-thumb[data-page="${i}"]`);
+      if (cb) cb.checked = false;
+      if (thumb) thumb.classList.remove('selected');
+    }
+    updateSelectionInfo();
+  }
+
+  async function deletePages() {
+    if (selectedPages.size === 0) {
+      showStatus('status-msg', '⚠️ Please select at least one page to delete.', 'error');
+      return;
+    }
+    if (selectedPages.size === totalPages) {
+      showStatus('status-msg', '⚠️ You cannot delete all pages — at least one page must remain.', 'error');
+      return;
+    }
+
+    const btn = document.getElementById('delete-btn');
+    btn.disabled = true;
+    document.getElementById('progress-wrap').classList.remove('hidden');
+    showStatus('status-msg', '⏳ Removing selected pages…', 'processing');
+    showProgress('progress-bar', 20);
+
+    try {
+      const { PDFDocument } = PDFLib;
+      const bytes = await pdfFile.arrayBuffer();
+      showProgress('progress-bar', 40);
+      const srcPdf = await PDFDocument.load(bytes);
+      showProgress('progress-bar', 60);
+
+      const newPdf = await PDFDocument.create();
+      const keepIndices = [];
+      for (let i = 0; i < totalPages; i++) {
+        if (!selectedPages.has(i)) keepIndices.push(i);
+      }
+
+      const copiedPages = await newPdf.copyPages(srcPdf, keepIndices);
+      copiedPages.forEach(p => newPdf.addPage(p));
+
+      showProgress('progress-bar', 85);
+      const newBytes = await newPdf.save();
+      showProgress('progress-bar', 100);
+
+      const blob = new Blob([newBytes], { type: 'application/pdf' });
+      const remaining = keepIndices.length;
+      const deleted = selectedPages.size;
+
+      showStatus('status-msg', `✅ Done! Deleted ${deleted} page(s) — ${remaining} page(s) remain.`, 'success');
+      document.getElementById('result-info').textContent = `${deleted} page(s) removed · ${remaining} page(s) remaining · ${formatBytes(blob.size)}`;
+      document.getElementById('result-card').classList.remove('hidden');
+      document.getElementById('download-btn').onclick = () => {
+        const baseName = pdfFile.name.replace(/\.pdf$/i, '');
+        downloadBlob(blob, `${baseName}-pages-deleted.pdf`);
+      };
+      document.getElementById('pages-container').classList.add('hidden');
+
+    } catch (e) {
+      showStatus('status-msg', '❌ Error: ' + e.message, 'error');
+      console.error(e);
+    }
+    btn.disabled = false;
+  }
+
+  function resetAll() {
+    pdfFile = null;
+    totalPages = 0;
+    selectedPages.clear();
+    document.getElementById('upload-zone').classList.remove('hidden');
+    document.getElementById('pages-container').classList.add('hidden');
+    document.getElementById('result-card').classList.add('hidden');
+    document.getElementById('status-msg').classList.add('hidden');
+    document.getElementById('progress-wrap').classList.add('hidden');
+    document.getElementById('page-grid').innerHTML = '';
+  }
+</script>
+</body>
+</html>
