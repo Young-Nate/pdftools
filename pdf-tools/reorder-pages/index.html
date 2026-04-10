@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reorder PDF Pages Online Free — Rearrange Pages | PDF Tools Hub</title>
+  <meta name="description" content="Reorder pages in a PDF online for free. Upload your PDF, drag and drop pages into any order, then download the rearranged result. 100% browser-based — no uploads, no signup." />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Reorder PDF Pages Online Free — PDF Tools Hub" />
+  <meta property="og:description" content="Reorder pages in a PDF online for free. Upload your PDF, drag and drop pages into any order, then download the rearranged result. 100% browser-based — no uploads, no signup." />
+  <meta property="og:url" content="https://pdftools-rouge.vercel.app/pdf-tools/reorder-pages/" />
+  <meta property="og:site_name" content="PDF Tools Hub" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Reorder PDF Pages Online Free — PDF Tools Hub" />
+  <meta name="twitter:description" content="Reorder pages in a PDF online for free. Upload your PDF, drag and drop pages into any order, then download the rearranged result. 100% browser-based — no uploads, no signup." />
+
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://pdftools-rouge.vercel.app/pdf-tools/reorder-pages/" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Reorder PDF Pages Online","url":"https://pdftools-rouge.vercel.app/pdf-tools/reorder-pages/","applicationCategory":"UtilityApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Reorder pages in a PDF online for free. No signup, no uploads. 100% browser-based."}
+  </script>
+
+  <link rel="stylesheet" href="../../css/style.css" />
+  <style>
+    .reorder-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: var(--space-3);
+      margin-top: var(--space-4);
+    }
+    .reorder-thumb {
+      border: 2px solid var(--color-border);
+      border-radius: 8px;
+      padding: var(--space-2);
+      text-align: center;
+      cursor: grab;
+      transition: box-shadow 0.15s, border-color 0.15s, opacity 0.15s;
+      user-select: none;
+      background: var(--color-surface);
+      position: relative;
+    }
+    .reorder-thumb:hover {
+      border-color: var(--color-primary);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .reorder-thumb.dragging {
+      opacity: 0.4;
+      border-style: dashed;
+      border-color: var(--color-primary);
+    }
+    .reorder-thumb.drag-over {
+      border-color: var(--color-primary);
+      box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.18);
+    }
+    .reorder-thumb .drag-grip {
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      color: var(--color-text-muted);
+      opacity: 0.5;
+    }
+    .reorder-thumb .thumb-page-icon {
+      margin: 4px auto 6px;
+      width: 56px;
+      height: 72px;
+      background: #f5f5f5;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--color-border);
+    }
+    .reorder-thumb .orig-num {
+      font-size: 11px;
+      color: var(--color-text-muted);
+      margin-bottom: 2px;
+    }
+    .reorder-thumb .new-num {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--color-primary);
+      background: var(--color-primary-light, #fff0f1);
+      border-radius: 4px;
+      padding: 1px 8px;
+      display: inline-block;
+    }
+    .reorder-hint {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      text-align: center;
+      margin-top: var(--space-2);
+      padding: var(--space-2);
+      background: var(--color-surface);
+      border-radius: 6px;
+      border: 1px solid var(--color-border);
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container container--wide">
+    <a href="../../index.html" class="logo">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="7" fill="#e63946" opacity="0.12"/><path d="M8 6h8l6 6v10a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z" fill="#e63946" opacity="0.2"/><path d="M16 6l6 6h-6V6z" fill="#e63946"/><rect x="9" y="13" width="10" height="1.5" rx="0.75" fill="#e63946"/><rect x="9" y="16" width="7" height="1.5" rx="0.75" fill="#e63946" opacity="0.6"/></svg>
+      PDF<span class="logo-accent">Tools</span>Hub
+    </a>
+    <nav aria-label="Main navigation"><ul class="nav-links">
+      <li><a href="../../index.html">All Tools</a></li>
+      <li><a href="../delete-pages/index.html">Delete Pages</a></li>
+      <li><a href="../merge-pdf/index.html">Merge PDF</a></li>
+    </ul></nav>
+    <div class="header-actions"></div>
+  </div>
+</header>
+
+<main class="tool-page">
+  <div class="container container--wide">
+    <nav class="breadcrumb"><a href="../../index.html">Home</a><span>›</span><span>Reorder PDF Pages</span></nav>
+
+    <div class="tool-header">
+      <div class="tool-tag">📂 Organize · Free</div>
+      <h1>Reorder PDF Pages Online Free</h1>
+      <p>Drag and drop pages into any order, then save the rearranged PDF. Perfect for fixing page order after scanning or merging documents. No signup, no server uploads.</p>
+    </div>
+
+    <!-- AD BANNER -->
+    <div class="ad-slot ad-slot--banner">Advertisement</div>
+
+    <div class="page-layout">
+      <div class="main-col">
+        <!-- UPLOAD ZONE -->
+        <div class="upload-card" id="upload-zone">
+          <input type="file" id="file-input" accept=".pdf" aria-label="Select a PDF file" />
+          <div class="upload-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          </div>
+          <h2>Drop your PDF here</h2>
+          <p>or click to browse your files</p>
+          <button class="btn-upload" onclick="document.getElementById('file-input').click();event.stopPropagation();">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            Select PDF File
+          </button>
+          <div class="upload-hint">PDF files only · Processed locally in your browser</div>
+        </div>
+
+        <!-- REORDER CONTROLS -->
+        <div id="reorder-container" class="hidden">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-2);">
+            <strong id="file-label" style="font-size:var(--text-sm);"></strong>
+            <button class="btn-secondary" onclick="resetAll()">↺ Change file</button>
+          </div>
+
+          <div class="reorder-hint">
+            ☝️ Drag pages left or right to reorder them. The number in red shows the new position.
+          </div>
+
+          <div class="reorder-grid" id="reorder-grid"></div>
+
+          <div class="tool-actions" style="margin-top:var(--space-5);">
+            <button class="btn-action" id="reorder-btn" onclick="saveReordered()">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v13a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+              Save Reordered PDF
+            </button>
+            <button class="btn-secondary" onclick="resetOrder()">↺ Reset order</button>
+          </div>
+        </div>
+
+        <!-- STATUS -->
+        <div id="status-msg" class="status-message hidden"></div>
+        <div id="progress-wrap" class="progress-wrap hidden"><div class="progress-bar" id="progress-bar"></div></div>
+
+        <!-- RESULT -->
+        <div id="result-card" class="result-card hidden">
+          <h3>✅ Pages Reordered Successfully!</h3>
+          <p id="result-info">Your reordered PDF is ready to download.</p>
+          <button class="btn-download" id="download-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Reordered PDF
+          </button>
+          <br><br>
+          <button class="btn-secondary" onclick="resetAll()" style="margin:0 auto;">Reorder another file</button>
+        </div>
+
+        <!-- CONTENT -->
+        <div class="content-sections">
+          <div class="content-section">
+            <h2>How to Reorder PDF Pages</h2>
+            <div class="steps-list">
+              <div class="step-item"><div class="step-num">1</div><div class="step-content"><h3>Upload your PDF</h3><p>Click "Select PDF File" or drag and drop your PDF into the upload zone. Your file is loaded directly in your browser — nothing is sent to any server.</p></div></div>
+              <div class="step-item"><div class="step-num">2</div><div class="step-content"><h3>Drag pages into order</h3><p>Each page appears as a thumbnail card. Drag any card to a new position to rearrange it. The red number on each card shows its new position in the final document.</p></div></div>
+              <div class="step-item"><div class="step-num">3</div><div class="step-content"><h3>Click "Save Reordered PDF"</h3><p>Hit the button and the tool will rebuild the PDF with pages in the exact order you arranged them, at full original quality.</p></div></div>
+              <div class="step-item"><div class="step-num">4</div><div class="step-content"><h3>Download your PDF</h3><p>Click "Download Reordered PDF" to save the file. You can also click "Reset order" at any time to go back to the original page sequence.</p></div></div>
+            </div>
+          </div>
+
+          <div class="content-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <button class="faq-question">Does reordering pages affect image or text quality?<svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+                <div class="faq-answer">No. Pages are copied directly from the source PDF into a new document in the order you choose. There is no re-encoding, compression, or rendering involved. All text, images, fonts, and formatting are kept exactly as in the original.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">Is there a limit on how many pages I can reorder?<svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+                <div class="faq-answer">There is no strict page limit. However, very large PDFs (hundreds of pages or heavy images) may load more slowly since all processing happens in your browser. Performance depends on your device's available memory and processing speed.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">Is my PDF file kept private?<svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+                <div class="faq-answer">Completely. Everything runs locally in your browser using JavaScript and pdf-lib. Your file is never uploaded to any server, stored, or transmitted anywhere. Your documents remain private on your device at all times.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="content-section">
+            <h2>Other PDF Tools</h2>
+            <div class="tools-grid">
+              <a href="../delete-pages/index.html" class="tool-card"><div class="tool-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/></svg></div><strong>Delete Pages</strong><span>Remove unwanted pages</span></a>
+              <a href="../extract-pages/index.html" class="tool-card"><div class="tool-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg></div><strong>Extract Pages</strong><span>Save specific pages</span></a>
+              <a href="../merge-pdf/index.html" class="tool-card"><div class="tool-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 6H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-3"/><polyline points="15 3 12 6 9 3"/></svg></div><strong>Merge PDF</strong><span>Combine files</span></a>
+              <a href="../split-pdf/index.html" class="tool-card"><div class="tool-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="21" y1="6" x2="3" y2="6"/><path d="M3 12h18"/></svg></div><strong>Split PDF</strong><span>Divide into parts</span></a>
+              <a href="../add-watermark/index.html" class="tool-card"><div class="tool-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><strong>Add Watermark</strong><span>Stamp text on pages</span></a>
+              <a href="../rotate-pdf/index.html" class="tool-card"><div class="tool-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 4v6h6"/><path d="M3.51 15a9 9 0 1 0 .49-4"/></svg></div><strong>Rotate PDF</strong><span>Fix orientation</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <div class="ad-slot ad-slot--sidebar">Ad</div>
+        <div class="sidebar-widget">
+          <h3>Other PDF Tools</h3>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:var(--space-2);">
+            <li><a href="../delete-pages/index.html" style="font-size:var(--text-sm);color:var(--color-text-muted);text-decoration:none;display:flex;align-items:center;gap:var(--space-2);" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--color-text-muted)'">🗑️ Delete Pages</a></li>
+            <li><a href="../extract-pages/index.html" style="font-size:var(--text-sm);color:var(--color-text-muted);text-decoration:none;display:flex;align-items:center;gap:var(--space-2);" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--color-text-muted)'">📄 Extract Pages</a></li>
+            <li><a href="../add-watermark/index.html" style="font-size:var(--text-sm);color:var(--color-text-muted);text-decoration:none;display:flex;align-items:center;gap:var(--space-2);" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--color-text-muted)'">🔏 Add Watermark</a></li>
+            <li><a href="../merge-pdf/index.html" style="font-size:var(--text-sm);color:var(--color-text-muted);text-decoration:none;" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--color-text-muted)'">📎 Merge PDF</a></li>
+            <li><a href="../split-pdf/index.html" style="font-size:var(--text-sm);color:var(--color-text-muted);text-decoration:none;" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--color-text-muted)'">✂️ Split PDF</a></li>
+            <li><a href="../compress-pdf/index.html" style="font-size:var(--text-sm);color:var(--color-text-muted);text-decoration:none;" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--color-text-muted)'">🗜️ Compress PDF</a></li>
+            <li><a href="../rotate-pdf/index.html" style="font-size:var(--text-sm);color:var(--color-text-muted);text-decoration:none;" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--color-text-muted)'">🔄 Rotate PDF</a></li>
+            <li><a href="../pdf-to-jpg/index.html" style="font-size:var(--text-sm);color:var(--color-text-muted);text-decoration:none;" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--color-text-muted)'">🖼️ PDF to JPG</a></li>
+            <li><a href="../add-page-numbers/index.html" style="font-size:var(--text-sm);color:var(--color-text-muted);text-decoration:none;" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--color-text-muted)'">🔢 Add Page Numbers</a></li>
+          </ul>
+        </div>
+        <div class="ad-slot ad-slot--sidebar">Ad</div>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container container--wide">
+    <div class="footer-bottom">
+      <span>© 2026 PDF Tools Hub</span>
+      <span><a href="../../index.html" style="color:var(--color-primary);">All PDF Tools</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- pdf-lib CDN -->
+<script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+<script src="../../js/faq.js"></script>
+<script src="../../js/upload.js"></script>
+<script>
+  let pdfFile = null;
+  let pageOrder = []; // current 0-based order
+  let originalOrder = [];
+  let dragSrcIdx = null; // index in pageOrder array (position), not page number
+
+  initUploadZone({
+    zoneId: 'upload-zone',
+    inputId: 'file-input',
+    accept: '.pdf',
+    multiple: false,
+    onFiles: handleFile
+  });
+
+  async function handleFile(files) {
+    if (!files || files.length === 0) return;
+    pdfFile = files[0];
+    showStatus('status-msg', '⏳ Loading PDF…', 'processing');
+    try {
+      const bytes = await pdfFile.arrayBuffer();
+      const pdf = await PDFLib.PDFDocument.load(bytes);
+      const n = pdf.getPageCount();
+      pageOrder = Array.from({ length: n }, (_, i) => i);
+      originalOrder = [...pageOrder];
+
+      document.getElementById('upload-zone').classList.add('hidden');
+      document.getElementById('reorder-container').classList.remove('hidden');
+      document.getElementById('result-card').classList.add('hidden');
+      document.getElementById('file-label').textContent = `${pdfFile.name} · ${n} pages`;
+      renderGrid();
+      showStatus('status-msg', `📄 ${pdfFile.name} loaded — ${n} pages`, 'success');
+    } catch (e) {
+      showStatus('status-msg', '❌ Could not read PDF: ' + e.message, 'error');
+    }
+  }
+
+  function renderGrid() {
+    const grid = document.getElementById('reorder-grid');
+    grid.innerHTML = '';
+    pageOrder.forEach((origIdx, position) => {
+      const thumb = document.createElement('div');
+      thumb.className = 'reorder-thumb';
+      thumb.draggable = true;
+      thumb.dataset.pos = position;
+      thumb.innerHTML = `
+        <div class="drag-grip" title="Drag to reorder">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="9" cy="7" r="1"/><circle cx="15" cy="7" r="1"/>
+            <circle cx="9" cy="12" r="1"/><circle cx="15" cy="12" r="1"/>
+            <circle cx="9" cy="17" r="1"/><circle cx="15" cy="17" r="1"/>
+          </svg>
+        </div>
+        <div class="thumb-page-icon">
+          <svg width="24" height="30" viewBox="0 0 24 30" fill="none"><rect x="1" y="1" width="22" height="28" rx="2" fill="#f9f9f9" stroke="#d4d4d4" stroke-width="1.5"/><rect x="4" y="7" width="16" height="1.5" rx="0.75" fill="#ccc"/><rect x="4" y="11" width="13" height="1.5" rx="0.75" fill="#ccc"/><rect x="4" y="15" width="14" height="1.5" rx="0.75" fill="#ccc"/><rect x="4" y="19" width="10" height="1.5" rx="0.75" fill="#ccc"/></svg>
+        </div>
+        <div class="orig-num">Original: ${origIdx + 1}</div>
+        <div class="new-num">${position + 1}</div>
+      `;
+
+      thumb.addEventListener('dragstart', (e) => {
+        dragSrcIdx = position;
+        thumb.classList.add('dragging');
+        e.dataTransfer.effectAllowed = 'move';
+      });
+      thumb.addEventListener('dragend', () => {
+        thumb.classList.remove('dragging');
+        dragSrcIdx = null;
+      });
+      thumb.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        e.dataTransfer.dropEffect = 'move';
+        thumb.classList.add('drag-over');
+      });
+      thumb.addEventListener('dragleave', () => {
+        thumb.classList.remove('drag-over');
+      });
+      thumb.addEventListener('drop', (e) => {
+        e.preventDefault();
+        thumb.classList.remove('drag-over');
+        if (dragSrcIdx === null || dragSrcIdx === position) return;
+        const moved = pageOrder.splice(dragSrcIdx, 1)[0];
+        pageOrder.splice(position, 0, moved);
+        renderGrid();
+      });
+
+      grid.appendChild(thumb);
+    });
+  }
+
+  function resetOrder() {
+    pageOrder = [...originalOrder];
+    renderGrid();
+  }
+
+  async function saveReordered() {
+    const btn = document.getElementById('reorder-btn');
+    btn.disabled = true;
+    document.getElementById('progress-wrap').classList.remove('hidden');
+    showStatus('status-msg', '⏳ Building reordered PDF…', 'processing');
+    showProgress('progress-bar', 20);
+
+    try {
+      const { PDFDocument } = PDFLib;
+      const bytes = await pdfFile.arrayBuffer();
+      showProgress('progress-bar', 40);
+      const srcPdf = await PDFDocument.load(bytes);
+      showProgress('progress-bar', 60);
+
+      const newPdf = await PDFDocument.create();
+      const copiedPages = await newPdf.copyPages(srcPdf, pageOrder);
+      copiedPages.forEach(p => newPdf.addPage(p));
+
+      showProgress('progress-bar', 85);
+      const newBytes = await newPdf.save();
+      showProgress('progress-bar', 100);
+
+      const blob = new Blob([newBytes], { type: 'application/pdf' });
+
+      showStatus('status-msg', `✅ Done! ${pageOrder.length} pages saved in new order.`, 'success');
+      document.getElementById('result-info').textContent = `${pageOrder.length} pages · ${formatBytes(blob.size)}`;
+      document.getElementById('result-card').classList.remove('hidden');
+      document.getElementById('download-btn').onclick = () => {
+        const baseName = pdfFile.name.replace(/\.pdf$/i, '');
+        downloadBlob(blob, `${baseName}-reordered.pdf`);
+      };
+      document.getElementById('reorder-container').classList.add('hidden');
+
+    } catch (e) {
+      showStatus('status-msg', '❌ Error: ' + e.message, 'error');
+      console.error(e);
+    }
+    btn.disabled = false;
+  }
+
+  function resetAll() {
+    pdfFile = null;
+    pageOrder = [];
+    originalOrder = [];
+    dragSrcIdx = null;
+    document.getElementById('upload-zone').classList.remove('hidden');
+    document.getElementById('reorder-container').classList.add('hidden');
+    document.getElementById('result-card').classList.add('hidden');
+    document.getElementById('status-msg').classList.add('hidden');
+    document.getElementById('progress-wrap').classList.add('hidden');
+    document.getElementById('reorder-grid').innerHTML = '';
+  }
+</script>
+</body>
+</html>
