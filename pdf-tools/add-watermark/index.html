@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Add Watermark to PDF Online Free — Stamp Text on PDF | PDF Tools Hub</title>
+  <meta name="description" content="Add a text watermark to every page of a PDF online for free. Enter watermark text like DRAFT or CONFIDENTIAL, choose size, color, opacity, and position, then download. 100% browser-based." />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Add Watermark to PDF Online Free — PDF Tools Hub" />
+  <meta property="og:description" content="Add a text watermark to every page of a PDF online for free. Enter watermark text like DRAFT or CONFIDENTIAL, choose size, color, opacity, and position, then download. 100% browser-based." />
+  <meta property="og:url" content="https://pdftools-rouge.vercel.app/pdf-tools/add-watermark/" />
+  <meta property="og:site_name" content="PDF Tools Hub" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Add Watermark to PDF Online Free — PDF Tools Hub" />
+  <meta name="twitter:description" content="Add a text watermark to every page of a PDF online for free. Enter watermark text like DRAFT or CONFIDENTIAL, choose size, color, opacity, and position, then download. 100% browser-based." />
+
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://pdftools-rouge.vercel.app/pdf-tools/add-watermark/" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Add Watermark to PDF Online","url":"https://pdftools-rouge.vercel.app/pdf-tools/add-watermark/","applicationCategory":"UtilityApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Add a text watermark to every page of a PDF online for free. No signup, no uploads. 100% browser-based."}
+  </script>
+
+  <link rel="stylesheet" href="../../css/style.css" />
+  <style>
+    .watermark-controls {
+      border: 1px solid var(--color-border);
+      border-radius: 10px;
+      padding: var(--space-5);
+      background: var(--color-surface);
+      margin-top: var(--space-4);
+    }
+    .control-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-4);
+      margin-bottom: var(--space-4);
+    }
+    @media (max-width: 540px) {
+      .control-row { grid-template-columns: 1fr; }
+    }
+    .control-group {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-1);
+    }
+    .control-group label {
+      font-size: var(--text-sm);
+      font-weight: 600;
+      color: var(--color-text);
+    }
+    .control-group input[type="text"],
+    .control-group input[type="number"],
+    .control-group select {
+      padding: 8px 12px;
+      border: 1.5px solid var(--color-border);
+      border-radius: 6px;
+      font-size: 0.95rem;
+      font-family: inherit;
+      background: var(--color-bg, #fff);
+      color: var(--color-text);
+      transition: border-color 0.15s;
+    }
+    .control-group input:focus,
+    .control-group select:focus {
+      outline: none;
+      border-color: var(--color-primary);
+    }
+    .control-group input[type="range"] {
+      width: 100%;
+      accent-color: var(--color-primary);
+      margin-top: 4px;
+    }
+    .control-group .range-display {
+      font-size: 12px;
+      color: var(--color-text-muted);
+      text-align: right;
+    }
+    .color-picker-row {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+    }
+    .color-picker-row input[type="color"] {
+      width: 40px;
+      height: 36px;
+      border: 1.5px solid var(--color-border);
+      border-radius: 6px;
+      padding: 2px;
+      cursor: pointer;
+      background: var(--color-bg, #fff);
+    }
+    .preset-colors {
+      display: flex;
+      gap: var(--space-2);
+      flex-wrap: wrap;
+      margin-top: var(--space-1);
+    }
+    .preset-color {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: border-color 0.12s;
+    }
+    .preset-color:hover, .preset-color.active {
+      border-color: var(--color-primary);
+    }
+    .watermark-preview-box {
+      margin-top: var(--space-4);
+      padding: var(--space-4);
+      background: white;
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      position: relative;
+      min-height: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .watermark-preview-box .preview-page {
+      width: 120px;
+      height: 160px;
+      background: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      padding: 10px 8px;
+      gap: 5px;
+    }
+    .watermark-preview-box .preview-line {
+      height: 6px;
+      background: #e0e0e0;
+      border-radius: 3px;
+    }
+    .watermark-preview-box .preview-line:nth-child(2) { width: 80%; }
+    .watermark-preview-box .preview-line:nth-child(3) { width: 90%; }
+    .watermark-preview-box .preview-line:nth-child(4) { width: 65%; }
+    .watermark-preview-box .preview-line:nth-child(5) { width: 75%; }
+    #watermark-preview-text {
+      position: absolute;
+      white-space: nowrap;
+      font-weight: 900;
+      pointer-events: none;
+      letter-spacing: 0.05em;
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container container--wide">
+    <a href="../../index.html" class="logo">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="7" fill="#e63946" opacity="0.12"/><path d="M8 6h8l6 6v10a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z" fill="#e63946" opacity="0.2"/><path d="M16 6l6 6h-6V6z" fill="#e63946"/><rect x="9" y="13" width="10" height="1.5" rx="0.75" fill="#e63946"/><rect x="9" y="16" width="7" height="1.5" rx="0.75" fill="#e63946" opacity="0.6"/></svg>
+      PDF<span class="logo-accent">Tools</span>Hub
+    </a>
+    <nav aria-label="Main navigation"><ul class="nav-links">
+      <li><a href="../../index.html">All Tools</a></li>
+      <li><a href="../delete-pages/index.html">Delete Pages</a></li>
+      <li><a href="../merge-pdf/index.html">Merge PDF</a></li>
+    </ul></nav>
+    <div class="header-actions"></div>
+  </div>
+</header>
+
+<main class="tool-page">
+  <div class="container container--wide">
+    <nav class="breadcrumb"><a href="../../index.html">Home</a><span>›</span><span>Add Watermark</span></nav>
+
+    <div class="tool-header">
+      <div class="tool-tag">✏️ Edit · Free</div>
+      <h1>Add Watermark to PDF Online Free</h1>
+      <p>Stamp custom text — DRAFT, CONFIDENTIAL, your company name — on every page of a PDF. Control font size, color, opacity, and position. No signup, no server uploads.</p>
+    </div>
+
+    <!-- AD BANNER -->
+    <div class="ad-slot ad-slot--banner">Advertisement</div>
+
+    <div class="page-layout">
+      <div class="main-col">
+        <!-- UPLOAD ZONE -->
+        <div class="upload-card" id="upload-zone">
+          <input type="file" id="file-input" accept=".pdf" aria-label="Select a PDF file" />
+          <div class="upload-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          </div>
+          <h2>Drop your PDF here</h2>
+          <p>or click to browse your files</p>
+          <button class="btn-upload" onclick="document.getElementById('file-input').click();event.stopPropagation();">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            Select PDF File
+          </button>
+          <div class="upload-hint">PDF files only · Processed locally in your browser</div>
+        </div>
+
+        <!-- WATERMARK CONTROLS -->
+        <div id="watermark-container" class="hidden">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-3);">
+            <strong id="file-label" style="font-size:var(--text-sm);"></strong>
+            <button class="btn-secondary" onclick="resetAll()">↺ Change file</button>
+          </div>
+
+          <div class="watermark-controls">
+            <div class="control-row">
+              <div class="control-group" style="grid-column: span 2;">
+                <label for="wm-text">Watermark text</label>
+                <input type="text" id="wm-text" value="DRAFT" maxlength="60" placeholder="e.g. DRAFT, CONFIDENTIAL, SAMPLE" oninput="updatePreview()" />
+              </div>
+            </div>
+
+            <div class="control-row">
+              <div class="control-group">
+                <label for="wm-size">Font size</label>
+                <input type="number" id="wm-size" value="60" min="10" max="200" step="5" oninput="updatePreview()" />
+              </div>
+              <div class="control-group">
+                <label for="wm-position">Position</label>
+                <select id="wm-position" onchange="updatePreview()">
+                  <option value="diagonal">Diagonal center</option>
+                  <option value="center">Center</option>
+                  <option value="header">Header (top)</option>
+                  <option value="footer">Footer (bottom)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="control-row">
+              <div class="control-group">
+                <label>Color</label>
+                <div class="color-picker-row">
+                  <input type="color" id="wm-color" value="#cc0000" oninput="updatePreview()" />
+                  <span id="wm-color-hex" style="font-size:13px;color:var(--color-text-muted);">#cc0000</span>
+                </div>
+                <div class="preset-colors" id="preset-colors">
+                  <div class="preset-color active" style="background:#cc0000;" data-color="#cc0000" onclick="setPresetColor(this, '#cc0000')" title="Red"></div>
+                  <div class="preset-color" style="background:#1a1a1a;" data-color="#1a1a1a" onclick="setPresetColor(this, '#1a1a1a')" title="Black"></div>
+                  <div class="preset-color" style="background:#888888;" data-color="#888888" onclick="setPresetColor(this, '#888888')" title="Gray"></div>
+                  <div class="preset-color" style="background:#0055aa;" data-color="#0055aa" onclick="setPresetColor(this, '#0055aa')" title="Blue"></div>
+                  <div class="preset-color" style="background:#006600;" data-color="#006600" onclick="setPresetColor(this, '#006600')" title="Green"></div>
+                  <div class="preset-color" style="background:#cc8800;" data-color="#cc8800" onclick="setPresetColor(this, '#cc8800')" title="Orange"></div>
+                </div>
+              </div>
+              <div class="control-group">
+                <label for="wm-opacity">Opacity: <span id="opacity-val">30</span>%</label>
+                <input type="range" id="wm-opacity" min="5" max="100" value="30" step="5" oninput="document.getElementById('opacity-val').textContent=this.value; updatePreview()" />
+              </div>
+            </div>
+
+            <!-- LIVE PREVIEW -->
+            <div>
+              <label style="font-size:var(--text-sm);font-weight:600;display:block;margin-bottom:var(--space-2);">Preview</label>
+              <div class="watermark-preview-box" id="preview-box">
+                <div class="preview-page" id="preview-page">
+                  <div class="preview-line"></div>
+                  <div class="preview-line"></div>
+                  <div class="preview-line"></div>
+                  <div class="preview-line"></div>
+                  <div class="preview-line"></div>
+                  <div id="watermark-preview-text">DRAFT</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tool-actions" style="margin-top:var(--space-5);">
+            <button class="btn-action" id="watermark-btn" onclick="applyWatermark()">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Apply Watermark
+            </button>
+            <button class="btn-secondary" onclick="resetAll()">↺ Start over</button>
+          </div>
+        </div>
+
+        <!-- STATUS -->
+        <div id="status-msg" class="status-message hidden"></div>
+        <div id="progress-wrap" class="progress-wrap hidden"><div class="progress-bar" id="progress-bar"></div></div>
+
+        <!-- RESULT -->
+        <div id="result-card" class="result-card hidden">
+          <h3>✅ Watermark Added Successfully!</h3>
+          <p id="result-info">Your watermarked PDF is ready to download.</p>
+          <button class="btn-download" id="download-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Watermarked PDF
+          </button>
+          <br><br>
+          <button class="btn-secondary" onclick="resetAll()" style="margin:0 auto;">Add watermark to another file</button>
+        </div>
+
+        <!-- CONTENT -->
+        <div class="content-sections">
+          <div class="content-section">
+            <h2>How to Add a Watermark to a PDF</h2>
+            <div class="steps-list">
+              <div class="step-item"><div class="step-num">1</div><div class="step-content"><h3>Upload your PDF</h3><p>Click "Select PDF File" or drag and drop your PDF into the upload zone. The file is processed entirely in your browser — no data is sent to any server.</p></div></div>
+              <div class="step-item"><div class="step-num">2</div><div class="step-content"><h3>Configure your watermark</h3><p>Enter your watermark text (e.g. DRAFT, CONFIDENTIAL), then adjust the font size, color, opacity, and position. A live preview shows exactly how the watermark will look on the page.</p></div></div>
+              <div class="step-item"><div class="step-num">3</div><div class="step-content"><h3>Click "Apply Watermark"</h3><p>The watermark is drawn on every page of your PDF using your chosen settings. The diagonal center position automatically rotates the text 45° for a classic watermark look.</p></div></div>
+              <div class="step-item"><div class="step-num">4</div><div class="step-content"><h3>Download your PDF</h3><p>Click "Download Watermarked PDF" to save the result. The original file is never modified.</p></div></div>
+            </div>
+          </div>
+
+          <div class="content-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <button class="faq-question">Can I remove the watermark from the PDF later?<svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+                <div class="faq-answer">The watermark is drawn directly onto the page content — it is not a separate layer. Once applied, it becomes part of the page and cannot be removed by this tool. If you need a reversible watermark, keep a copy of your original PDF before applying.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">Does the watermark appear on every page?<svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+                <div class="faq-answer">Yes — the watermark is applied to all pages in the document. The position and appearance is consistent across every page. Each page's watermark is centered relative to that specific page's dimensions, so it works correctly even if pages have different sizes.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">Is my PDF kept private when using this tool?<svg class="faq-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+                <div class="faq-answer">Yes, completely. All processing runs locally in your web browser using JavaScript and the pdf-lib library. Your file is never uploaded to any server and nothing is stored or transmitted. Your documents remain entirely private on your device.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="content-section">
+            <h2>Other PDF Tools</h2>
+            <div class="tools-grid">
+              <a href="../delete-pages/index.html" class="tool-card"><div class="tool-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/></svg></div><strong>Delete Pages</strong><span>Remove unwanted pages</span></a>
+              <a href="../extract-pages/index.html" class="tool-card"><div class="tool-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg></div><strong>Extract Pages</strong><span>Save specific pages</span></a>
+              <a href="../reorder-pages/index.html" class="tool-card"><div class="tool-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg></div><strong>Reorder Pages</strong><span>Rearrange pages</span></a>
+              <a href="../merge-pdf/index.html" class="tool-card"><div class="tool-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 6H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-3"/><polyline points="15 3 12 6 9 3"/></svg></div><strong>Merge PDF</strong><span>Combine files</span></a>
+              <a href="../add-page-numbers/index.html" class="tool-card"><div class="tool-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg></div><strong>Page Numbers</strong><span>Add numbering</span></a>
+              <a href="../compress-pdf/index.html" class="tool-card"><div class="tool-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 14 10 14 10 20"/><line x1="10" y1="14" x2="21" y2="3"/></svg></div><strong>Compress PDF</strong><span>Reduce file size</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <div class="ad-slot ad-slot--sidebar">Ad</div>
+        <div class="sidebar-widget">
+          <h3>Other PDF Tools</h3>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:var(--space-2);">
+            <li><a href="../delete-pages/index.html" style="font-size:var(--text-sm);color:var(--color-text-muted);text-decoration:none;display:flex;align-items:center;gap:var(--space-2);" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--color-text-muted)'">🗑️ Delete Pages</a></li>
+            <li><a href="../extract-pages/index.html" style="font-size:var(--text-sm);color:var(--color-text-muted);text-decoration:none;display:flex;align-items:center;gap:var(--space-2);" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--color-text-muted)'">📄 Extract Pages</a></li>
+            <li><a href="../reorder-pages/index.html" style="font-size:var(--text-sm);color:var(--color-text-muted);text-decoration:none;display:flex;align-items:center;gap:var(--space-2);" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--color-text-muted)'">🔀 Reorder Pages</a></li>
+            <li><a href="../merge-pdf/index.html" style="font-size:var(--text-sm);color:var(--color-text-muted);text-decoration:none;" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--color-text-muted)'">📎 Merge PDF</a></li>
+            <li><a href="../split-pdf/index.html" style="font-size:var(--text-sm);color:var(--color-text-muted);text-decoration:none;" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--color-text-muted)'">✂️ Split PDF</a></li>
+            <li><a href="../compress-pdf/index.html" style="font-size:var(--text-sm);color:var(--color-text-muted);text-decoration:none;" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--color-text-muted)'">🗜️ Compress PDF</a></li>
+            <li><a href="../rotate-pdf/index.html" style="font-size:var(--text-sm);color:var(--color-text-muted);text-decoration:none;" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--color-text-muted)'">🔄 Rotate PDF</a></li>
+            <li><a href="../pdf-to-jpg/index.html" style="font-size:var(--text-sm);color:var(--color-text-muted);text-decoration:none;" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--color-text-muted)'">🖼️ PDF to JPG</a></li>
+            <li><a href="../add-page-numbers/index.html" style="font-size:var(--text-sm);color:var(--color-text-muted);text-decoration:none;" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--color-text-muted)'">🔢 Add Page Numbers</a></li>
+          </ul>
+        </div>
+        <div class="ad-slot ad-slot--sidebar">Ad</div>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container container--wide">
+    <div class="footer-bottom">
+      <span>© 2026 PDF Tools Hub</span>
+      <span><a href="../../index.html" style="color:var(--color-primary);">All PDF Tools</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- pdf-lib CDN -->
+<script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+<script src="../../js/faq.js"></script>
+<script src="../../js/upload.js"></script>
+<script>
+  let pdfFile = null;
+
+  initUploadZone({
+    zoneId: 'upload-zone',
+    inputId: 'file-input',
+    accept: '.pdf',
+    multiple: false,
+    onFiles: handleFile
+  });
+
+  async function handleFile(files) {
+    if (!files || files.length === 0) return;
+    pdfFile = files[0];
+    showStatus('status-msg', '⏳ Loading PDF…', 'processing');
+    try {
+      const bytes = await pdfFile.arrayBuffer();
+      const pdf = await PDFLib.PDFDocument.load(bytes);
+      const n = pdf.getPageCount();
+
+      document.getElementById('upload-zone').classList.add('hidden');
+      document.getElementById('watermark-container').classList.remove('hidden');
+      document.getElementById('result-card').classList.add('hidden');
+      document.getElementById('file-label').textContent = `${pdfFile.name} · ${n} pages`;
+      updatePreview();
+      showStatus('status-msg', `📄 ${pdfFile.name} loaded — ${n} pages`, 'success');
+    } catch (e) {
+      showStatus('status-msg', '❌ Could not read PDF: ' + e.message, 'error');
+    }
+  }
+
+  function setPresetColor(el, color) {
+    document.getElementById('wm-color').value = color;
+    document.getElementById('wm-color-hex').textContent = color;
+    document.querySelectorAll('.preset-color').forEach(b => b.classList.remove('active'));
+    el.classList.add('active');
+    updatePreview();
+  }
+
+  function hexToRgb(hex) {
+    const r = parseInt(hex.slice(1, 3), 16) / 255;
+    const g = parseInt(hex.slice(3, 5), 16) / 255;
+    const b = parseInt(hex.slice(5, 7), 16) / 255;
+    return { r, g, b };
+  }
+
+  function updatePreview() {
+    // Update color hex display
+    const colorVal = document.getElementById('wm-color').value;
+    document.getElementById('wm-color-hex').textContent = colorVal;
+
+    const text = document.getElementById('wm-text').value || 'WATERMARK';
+    const size = Math.max(8, parseInt(document.getElementById('wm-size').value, 10) || 60);
+    const opacity = parseInt(document.getElementById('wm-opacity').value, 10) / 100;
+    const position = document.getElementById('wm-position').value;
+
+    const previewEl = document.getElementById('watermark-preview-text');
+    const previewBox = document.getElementById('preview-page');
+
+    previewEl.textContent = text;
+    previewEl.style.color = colorVal;
+    previewEl.style.opacity = opacity;
+
+    // Scale font size for preview (preview page is ~120x160)
+    const previewFontSize = Math.max(6, Math.min(28, size * 0.26));
+    previewEl.style.fontSize = previewFontSize + 'px';
+    previewEl.style.fontFamily = 'Helvetica, Arial, sans-serif';
+
+    // Position
+    previewBox.style.position = 'relative';
+    switch (position) {
+      case 'diagonal':
+        previewEl.style.transform = 'translate(-50%, -50%) rotate(-45deg)';
+        previewEl.style.top = '50%';
+        previewEl.style.left = '50%';
+        previewEl.style.bottom = 'auto';
+        break;
+      case 'center':
+        previewEl.style.transform = 'translate(-50%, -50%)';
+        previewEl.style.top = '50%';
+        previewEl.style.left = '50%';
+        previewEl.style.bottom = 'auto';
+        break;
+      case 'header':
+        previewEl.style.transform = 'translateX(-50%)';
+        previewEl.style.top = '8px';
+        previewEl.style.left = '50%';
+        previewEl.style.bottom = 'auto';
+        break;
+      case 'footer':
+        previewEl.style.transform = 'translateX(-50%)';
+        previewEl.style.top = 'auto';
+        previewEl.style.bottom = '8px';
+        previewEl.style.left = '50%';
+        break;
+    }
+  }
+
+  async function applyWatermark() {
+    const text = document.getElementById('wm-text').value.trim();
+    if (!text) {
+      showStatus('status-msg', '⚠️ Please enter watermark text.', 'error');
+      return;
+    }
+    if (!pdfFile) {
+      showStatus('status-msg', '⚠️ Please upload a PDF first.', 'error');
+      return;
+    }
+
+    const fontSize = Math.max(8, parseInt(document.getElementById('wm-size').value, 10) || 60);
+    const opacity = parseInt(document.getElementById('wm-opacity').value, 10) / 100;
+    const position = document.getElementById('wm-position').value;
+    const colorHex = document.getElementById('wm-color').value;
+    const { r, g, b } = hexToRgb(colorHex);
+
+    const btn = document.getElementById('watermark-btn');
+    btn.disabled = true;
+    document.getElementById('progress-wrap').classList.remove('hidden');
+    showStatus('status-msg', '⏳ Applying watermark…', 'processing');
+    showProgress('progress-bar', 15);
+
+    try {
+      const { PDFDocument, StandardFonts, rgb, degrees } = PDFLib;
+      const bytes = await pdfFile.arrayBuffer();
+      showProgress('progress-bar', 30);
+      const pdfDoc = await PDFDocument.load(bytes);
+      showProgress('progress-bar', 45);
+
+      const font = await pdfDoc.embedFont(StandardFonts.HelveticaBold);
+      const pages = pdfDoc.getPages();
+      const totalPages = pages.length;
+
+      for (let i = 0; i < totalPages; i++) {
+        showProgress('progress-bar', 45 + Math.round((i / totalPages) * 40));
+        const page = pages[i];
+        const { width, height } = page.getSize();
+
+        // Measure text width to center it
+        const textWidth = font.widthOfTextAtSize(text, fontSize);
+        const textHeight = font.heightAtSize(fontSize);
+
+        let x, y, rotationAngle;
+
+        switch (position) {
+          case 'diagonal':
+            // Center diagonally, rotated 45 degrees
+            x = width / 2;
+            y = height / 2;
+            rotationAngle = 45;
+            break;
+          case 'center':
+            x = (width - textWidth) / 2;
+            y = (height - textHeight) / 2;
+            rotationAngle = 0;
+            break;
+          case 'header':
+            x = (width - textWidth) / 2;
+            y = height - textHeight - 20;
+            rotationAngle = 0;
+            break;
+          case 'footer':
+            x = (width - textWidth) / 2;
+            y = 20;
+            rotationAngle = 0;
+            break;
+          default:
+            x = width / 2;
+            y = height / 2;
+            rotationAngle = 45;
+        }
+
+        page.drawText(text, {
+          x: position === 'diagonal' ? x - textWidth / 2 : x,
+          y,
+          size: fontSize,
+          font,
+          color: rgb(r, g, b),
+          opacity,
+          rotate: position === 'diagonal' ? degrees(rotationAngle) : degrees(0),
+        });
+      }
+
+      showProgress('progress-bar', 90);
+      const newBytes = await pdfDoc.save();
+      showProgress('progress-bar', 100);
+
+      const blob = new Blob([newBytes], { type: 'application/pdf' });
+
+      showStatus('status-msg', `✅ Watermark "${text}" applied to all ${totalPages} pages.`, 'success');
+      document.getElementById('result-info').textContent = `"${text}" applied to ${totalPages} pages · ${formatBytes(blob.size)}`;
+      document.getElementById('result-card').classList.remove('hidden');
+      document.getElementById('download-btn').onclick = () => {
+        const baseName = pdfFile.name.replace(/\.pdf$/i, '');
+        downloadBlob(blob, `${baseName}-watermarked.pdf`);
+      };
+      document.getElementById('watermark-container').classList.add('hidden');
+
+    } catch (e) {
+      showStatus('status-msg', '❌ Error: ' + e.message, 'error');
+      console.error(e);
+    }
+    btn.disabled = false;
+  }
+
+  function resetAll() {
+    pdfFile = null;
+    document.getElementById('upload-zone').classList.remove('hidden');
+    document.getElementById('watermark-container').classList.add('hidden');
+    document.getElementById('result-card').classList.add('hidden');
+    document.getElementById('status-msg').classList.add('hidden');
+    document.getElementById('progress-wrap').classList.add('hidden');
+  }
+
+  // Initial preview render
+  document.addEventListener('DOMContentLoaded', updatePreview);
+</script>
+</body>
+</html>
