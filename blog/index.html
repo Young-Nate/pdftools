@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO Meta -->
+  <title>PDF Nerds Blog — Tips, Guides &amp; Tutorials</title>
+  <meta name="description" content="Practical PDF guides from PDF Nerds. Learn how to compress, split, merge, and manage PDFs locally in your browser — no uploads, no sign-up required." />
+  <link rel="canonical" href="https://pdfnerds.com/blog/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="PDF Nerds Blog — Tips, Guides &amp; Tutorials" />
+  <meta property="og:description" content="Practical PDF guides from PDF Nerds. Learn how to compress, split, merge, and manage PDFs locally in your browser — no uploads, no sign-up required." />
+  <meta property="og:url" content="https://pdfnerds.com/blog/" />
+  <meta property="og:site_name" content="PDF Nerds" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="PDF Nerds Blog — Tips, Guides &amp; Tutorials" />
+  <meta name="twitter:description" content="Step-by-step PDF guides: compress, split, merge and convert files locally in your browser." />
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "PDF Nerds Blog",
+    "url": "https://pdfnerds.com/blog/",
+    "description": "Practical PDF guides and tutorials from PDF Nerds.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "PDF Nerds",
+      "url": "https://pdfnerds.com"
+    }
+  }
+  </script>
+
+  <meta name="robots" content="index, follow" />
+
+  <!-- Shared site CSS (same path as all other pages) -->
+  <link rel="stylesheet" href="../css/style.css" />
+
+  <style>
+    /* ─── Blog-specific styles ─── */
+
+    /* Hero */
+    .blog-hero {
+      padding: 72px 0 48px;
+      text-align: center;
+    }
+    .blog-hero__eyebrow {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #e63946;
+      background: rgba(230, 57, 70, 0.1);
+      border-radius: 100px;
+      padding: 4px 14px;
+      margin-bottom: 16px;
+    }
+    .blog-hero__title {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin: 0 0 16px;
+      color: var(--color-text, #111827);
+    }
+    .blog-hero__subtitle {
+      font-size: 1.1rem;
+      color: var(--color-text-muted, #6b7280);
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.65;
+    }
+
+    /* Grid */
+    .blog-grid-section {
+      padding: 0 0 80px;
+    }
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 24px;
+    }
+
+    /* Card */
+    .blog-card {
+      display: flex;
+      flex-direction: column;
+      background: var(--color-surface, #ffffff);
+      border: 1px solid var(--color-border, #e5e7eb);
+      border-radius: 14px;
+      padding: 28px 28px 24px;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    }
+    .blog-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 40px rgba(230, 57, 70, 0.1);
+      border-color: #e63946;
+    }
+    .blog-card__tag {
+      display: inline-flex;
+      align-items: center;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #e63946;
+      background: rgba(230, 57, 70, 0.08);
+      border-radius: 100px;
+      padding: 3px 10px;
+      margin-bottom: 14px;
+      width: fit-content;
+    }
+    .blog-card__title {
+      font-size: 1.12rem;
+      font-weight: 700;
+      line-height: 1.38;
+      margin: 0 0 10px;
+      color: var(--color-text, #111827);
+    }
+    .blog-card__excerpt {
+      font-size: 0.88rem;
+      color: var(--color-text-muted, #6b7280);
+      line-height: 1.65;
+      flex: 1;
+      margin: 0 0 20px;
+    }
+    .blog-card__cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: #e63946;
+      transition: gap 0.15s ease;
+    }
+    .blog-card:hover .blog-card__cta {
+      gap: 8px;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .blog-hero { padding: 48px 0 32px; }
+      .blog-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER (matches site header exactly) -->
+<header class="site-header">
+  <div class="container container--wide">
+    <a href="../index.html" class="logo">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+        <rect width="28" height="28" rx="7" fill="#e63946" opacity="0.12"/>
+        <path d="M8 6h8l6 6v10a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z" fill="#e63946" opacity="0.2"/>
+        <path d="M16 6l6 6h-6V6z" fill="#e63946"/>
+        <rect x="9" y="13" width="10" height="1.5" rx="0.75" fill="#e63946"/>
+        <rect x="9" y="16" width="7" height="1.5" rx="0.75" fill="#e63946" opacity="0.6"/>
+      </svg>
+      PDF<span class="logo-accent">Nerds</span>
+    </a>
+    <nav aria-label="Main navigation">
+      <ul class="nav-links">
+        <li><a href="../index.html#organize">Organize</a></li>
+        <li><a href="../index.html#convert">Convert</a></li>
+        <li><a href="../index.html#optimize">Optimize</a></li>
+        <li><a href="../index.html#edit">Edit</a></li>
+        <li><a href="../index.html#security">Security</a></li>
+        <li><a href="index.html" aria-current="page">Blog</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a href="../index.html#all-tools" class="btn-primary">All Tools</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- Hero -->
+  <section class="blog-hero">
+    <div class="container container--wide">
+      <span class="blog-hero__eyebrow">PDF Nerds Blog</span>
+      <h1 class="blog-hero__title">Tips, Guides &amp; Tutorials</h1>
+      <p class="blog-hero__subtitle">Practical, jargon-free guides for working with PDFs. Compress, split, and manage your files — all locally, no uploads ever needed.</p>
+    </div>
+  </section>
+
+  <!-- Article Grid -->
+  <section class="blog-grid-section">
+    <div class="container container--wide">
+      <div class="blog-grid">
+
+        <!-- Article 1: Compress PDF for Email -->
+        <a href="compress-pdf-for-email-no-uploads/index.html" class="blog-card">
+          <span class="blog-card__tag">Optimize · Email</span>
+          <h2 class="blog-card__title">Compress a PDF for Email (Free, Local, No Uploads): A Practical Guide</h2>
+          <p class="blog-card__excerpt">Learn how to compress a PDF for email without sacrificing readability. Step-by-step tips plus a free local (no-upload) workflow using PDF Nerds.</p>
+          <span class="blog-card__cta">Read more →</span>
+        </a>
+
+        <!-- Article 2: Split PDF -->
+        <a href="split-pdf-online-locally-no-uploads/index.html" class="blog-card">
+          <span class="blog-card__tag">Organize · Split</span>
+          <h2 class="blog-card__title">How to Split a PDF Online (Locally, Free, No Uploads): The 2026 Step-by-Step Guide</h2>
+          <p class="blog-card__excerpt">Learn how to split a PDF online without uploading it anywhere. Use PDF Nerds to extract pages, split by ranges, and save smaller files — 100% local in your browser.</p>
+          <span class="blog-card__cta">Read more →</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER (matches site footer exactly) -->
+<footer class="site-footer">
+  <div class="container container--wide">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Organize</h4>
+        <ul>
+          <li><a href="../pdf-tools/merge-pdf/index.html">Merge PDF</a></li>
+          <li><a href="../pdf-tools/split-pdf/index.html">Split PDF</a></li>
+          <li><a href="../pdf-tools/rotate-pdf/index.html">Rotate PDF</a></li>
+          <li><a href="../pdf-tools/add-page-numbers/index.html">Add Page Numbers</a></li>
+          <li><a href="../pdf-tools/delete-pages/index.html">Delete Pages</a></li>
+          <li><a href="../pdf-tools/extract-pages/index.html">Extract Pages</a></li>
+          <li><a href="../pdf-tools/reorder-pages/index.html">Reorder Pages</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Convert</h4>
+        <ul>
+          <li><a href="../pdf-tools/pdf-to-jpg/index.html">PDF to JPG</a></li>
+          <li><a href="../pdf-tools/jpg-to-pdf/index.html">JPG to PDF</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Optimize</h4>
+        <ul>
+          <li><a href="../pdf-tools/compress-pdf/index.html">Compress PDF</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Edit</h4>
+        <ul>
+          <li><a href="../pdf-tools/edit-pdf/index.html">Edit PDF</a></li>
+          <li><a href="../pdf-tools/sign-pdf/index.html">Sign PDF</a></li>
+          <li><a href="../pdf-tools/add-watermark/index.html">Add Watermark</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Security</h4>
+        <ul>
+          <li><a href="../pdf-tools/protect-pdf/index.html">Protect PDF</a></li>
+          <li><a href="../pdf-tools/unlock-pdf/index.html">Unlock PDF</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Blog</h4>
+        <ul>
+          <li><a href="index.html">All Articles</a></li>
+          <li><a href="compress-pdf-for-email-no-uploads/index.html">Compress PDF for Email</a></li>
+          <li><a href="split-pdf-online-locally-no-uploads/index.html">Split PDF Online</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 PDF Nerds — All processing done in your browser.</span>
+      <span>Free online PDF tools · No signup required</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
